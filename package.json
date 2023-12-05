@@ -4,7 +4,6 @@
     "description": "Project structure for API",
     "main": "dist/index.js",
     "scripts": {
-        "prepare": "husky install",
         "start": "node .",
         "start-watch": "nodemon --delay 5000ms --exec npm run start",
         "build": "tsc",
