@@ -1,0 +1,36 @@
+#/documents:
+#  post:
+#    summary: Save Document
+#    description: Upload JSON and CSV
+#    tags:
+#      - documents
+#    security:
+#      - bearerAuth: []
+#    requestBody:
+#      required: true
+#      content:
+#          'application/json':
+#              schema:
+#                  properties:
+#                      createdAt:
+#                          type: string
+#                          format: date
+#          'multipart/form-data':
+#              schema:
+#                  type: object
+#                  properties:
+#                      jsonData:
+#                          type: string
+#                          format: binary
+#
+#    responses:
+#      200:
+#        $ref: '#/components/responses/200'
+#      400:
+#        $ref: '#/components/responses/400'
+#      401:
+#        $ref: '#/components/responses/401'
+#      403:
+#        $ref: '#/components/responses/403'
+#      422:
+#        $ref: '#/components/responses/422'
