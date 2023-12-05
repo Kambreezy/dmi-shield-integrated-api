@@ -1,6 +1,6 @@
 import { Model, Optional, DataTypes } from 'sequelize';
 import { db } from '../../database/config';
-import User from './user';
+import User from './User';
 
 interface DocumentSariAttributes {
     id: number;

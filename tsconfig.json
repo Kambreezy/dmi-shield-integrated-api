@@ -12,7 +12,7 @@
         "baseUrl": ".",
         "typeRoots": ["node_modules/@types", "./src/@types/index.d.ts"]
     },
-//    "include": ["src/**/*"],
-    "include": ["src", "src/**/*.ts", "tests/**/*.ts"],
+    "include": ["src/**/*"],
+//    "include": ["src", "src/**/*.ts", "tests/**/*.ts"],
     "exclude": ["node_modules", "src/**/__test__"]
 }

@@ -1,20 +1,27 @@
-FROM node:16
+# Fetching the minified node image on apline linux
+FROM node:slim
 
-# Create app directory
-WORKDIR /usr/src/app
+# Declaring env
+ENV NODE_ENV development
 
-# Copy package.json
+# make the 'app' folder the current working directory
+WORKDIR /app
+
+# copy both 'package.json' and 'package-lock.json' (if available)
 COPY package*.json ./
 
-
-# Install dependencies
+# install project dependencies
 RUN npm install
 
-# Copy all files
+# copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
 
-# Expose port 3000
-EXPOSE 3000
+# build app for production with minification
+RUN npm run build
 
-# Run app
+# Starting our application
 CMD npm start
+#CMD [ "node", "index.js" ]
+
+# Exposing server port
+EXPOSE 3000
