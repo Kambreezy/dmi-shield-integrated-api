@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+logs
+coverage
+**/database
+**/logs
+.idea
+**/.idea
+package-lock.json

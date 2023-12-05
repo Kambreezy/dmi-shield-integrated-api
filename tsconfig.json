@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "useUnknownInCatchVariables": false,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es2017",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "strict": false,
+        "baseUrl": ".",
+        "typeRoots": ["node_modules/@types", "./src/@types/index.d.ts"]
+    },
+//    "include": ["src/**/*"],
+    "include": ["src", "src/**/*.ts", "tests/**/*.ts"],
+    "exclude": ["node_modules", "src/**/__test__"]
+}
