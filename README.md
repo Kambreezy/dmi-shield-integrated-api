@@ -138,3 +138,9 @@ Before installation, make sure you have the following prerequisites
 8. Access swagger docs from `localhost:3001/docs/v1`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+### OpenHim Configuration
+
+
+1. Follow the instructions on how to setup OpenHim here [use this template](https://github.com/jembi/openhim-mediator-tutorial)
