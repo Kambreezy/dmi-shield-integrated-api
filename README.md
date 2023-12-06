@@ -127,4 +127,4 @@ Before installation, make sure you have the following prerequisites
 ### OpenHim Configuration
 
 
-1. Follow the instructions on how to setup OpenHim here [use this template](https://github.com/jembi/openhim-mediator-tutorial)
+1. Follow the instructions on how to setup OpenHim here [https://github.com/jembi/openhim-mediator-tutorial](https://github.com/jembi/openhim-mediator-tutorial)
