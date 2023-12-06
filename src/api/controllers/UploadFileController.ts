@@ -5,8 +5,6 @@ import multer from 'multer';
 import * as streamifier from 'streamifier';
 import csv from 'csv-parser';
 
-const fileResult: any[] = [];
-let headers: any = [];
 class UploadFileController {
     // ... Other members
 
@@ -19,8 +17,13 @@ class UploadFileController {
             const storage = multer.memoryStorage();
             const upload = multer({ storage: storage }).single('csvFile');
 
+            const fileResult: any[] = [];
+            let headers: any = [];
+            let isEmptyFile = true;
+
             let dateUploaded: string = '';
             let uploadDocType: string = '';
+            let userId: number;
             const self = this;
             await new Promise<void>((resolve, reject) => {
                 upload(req, res, (err) => {
@@ -36,10 +39,9 @@ class UploadFileController {
 
                     dateUploaded = req.query.dateUploaded?.toString() || '';
                     uploadDocType = req.query.uploadDocType?.toString() || '';
+                    userId = parseInt(req.query.userId.toString(), 10);
 
                     const csvFile = req.file;
-                    // const fileResult: any[] = [];
-                    // let headers: string[] | null = null;
                     const stream = streamifier.createReadStream(csvFile.buffer);
 
                     // Use csv-parser to parse the CSV file
@@ -47,11 +49,29 @@ class UploadFileController {
                         // .pipe(csv({ headers: true, skipLines: 1 })) // Use headers: true to treat the first row as headers
                         // .pipe(csv({ headers: true })) // Use headers: true to treat the first row as headers
                         .pipe(csv()) // Use headers: true to treat the first row as headers
-                        // .on('headers', (headerList) => {
-                        //     headers = headerList; // Save headers to a variable
-                        // })
+
                         .on('data', (data) => {
-                            fileResult.push(data);
+                            // if (
+                            //     Object.values(data).some(
+                            //         (value) =>
+                            //             value !== '' &&
+                            //             value !== null &&
+                            //             value !== undefined
+                            //     )
+                            // ) {
+                            //     fileResult.push(data);
+                            // }
+
+                            const isNonEmptyRow = Object.values(data).some(
+                                (value) =>
+                                    value !== '' &&
+                                    value !== null &&
+                                    value !== undefined
+                            );
+
+                            if (isNonEmptyRow) {
+                                fileResult.push(data);
+                            }
                         })
                         .on('end', () => {
                             resolve();
@@ -65,6 +85,8 @@ class UploadFileController {
                         });
                 });
             });
+
+            console.log('File length', fileResult.length);
 
             for (let i = 0; i < fileResult.length; i++) {
                 if (i === 0) {
@@ -120,11 +142,11 @@ class UploadFileController {
                     SEX: headers['SEX'],
                     TIMESTAMP: headers['TIMESTAMP'],
                     VACCINATED: headers['VACCINATED'],
-                    userId: 2
+                    userId: userId
                 };
 
                 const docSariPayload: DocumentSariType = {
-                    userId: 2,
+                    userId: userId,
                     PatientID: headers['PatientID'],
                     Datescreened: headers['Datescreened'],
                     EnrolmentDate: headers['EnrolmentDate'],
@@ -161,8 +183,8 @@ class UploadFileController {
                     Latitude: headers['Latitude']
                 };
 
-                console.log('503Payload', doc503_payload);
-                console.log('SariPayload', doc503_payload);
+                // console.log('503Payload', doc503_payload);
+                // console.log('SariPayload', doc503_payload);
 
                 if (uploadDocType === 'moh_503') {
                     await DocumentService.createDocument(doc503_payload);

@@ -10,5 +10,11 @@ mainRouter
 mainRouter
     .route('/signup')
     .post(Validate(Requirements.signup), AuthController.signUp);
+mainRouter
+    .route('/verify-code')
+    .post(Validate(Requirements.verifyCode), AuthController.verifyCode);
+mainRouter
+    .route('/fetch-login-data')
+    .post(Validate(Requirements.fetchLogin), AuthController.fetchUserLoginData);
 
 export default mainRouter;

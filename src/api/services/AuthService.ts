@@ -3,6 +3,7 @@ import UserRepository from '../repositories/UserRepository';
 import { UserInput, UserOutput } from '../models/User';
 import JWT from '../../utils/jwt';
 import { LoginResponseType } from '../types/auth';
+import EmailService from './EmailService';
 
 interface IAuthService {
     login(payload: UserInput): Promise<LoginResponseType>;
@@ -10,7 +11,7 @@ interface IAuthService {
 }
 
 class AuthService implements IAuthService {
-    async login(payload: UserInput): Promise<LoginResponseType> {
+    async login(payload: UserInput): Promise<any> {
         const user = await UserRepository.getUserByEmail(payload.email);
 
         if (!user) {
@@ -29,11 +30,13 @@ class AuthService implements IAuthService {
             throw new Error('Invalid token');
         }
 
+        if (user) {
+            // User was successfully created, send the 2FA email
+            EmailService.send2Fa(payload.email);
+        }
+
         return {
-            email: user.email,
-            fullName: `${user.firstName} ${user.lastName}`,
-            token: token,
-            userId: user.id
+            email: user.email
         };
     }
 
@@ -50,6 +53,27 @@ class AuthService implements IAuthService {
             ...payload,
             password: hashedPassword
         });
+    }
+
+    async getUserLoginData(email: string): Promise<LoginResponseType> {
+        const user = await UserRepository.getUserByEmail(email);
+
+        if (!user) {
+            throw new Error('User not found');
+        }
+
+        const token = await JWT.signToken(user.id);
+
+        if (!token) {
+            throw new Error('Invalid token');
+        }
+
+        return {
+            email: user.email,
+            fullName: `${user.firstName} ${user.lastName}`,
+            token: token,
+            userId: user.id
+        };
     }
 }
 
