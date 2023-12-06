@@ -1,6 +1,7 @@
 import { Model, Optional, DataTypes } from 'sequelize';
-import User from './user';
+// import User from './user';
 import { db } from '../../database/config';
+import User from './User';
 
 interface Document503Attributes {
     id: number;

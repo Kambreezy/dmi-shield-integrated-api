@@ -1,54 +1,81 @@
-import { slugify } from '../../utils/helpers';
-import { Doc503Input, Doc503Output } from '../models/Document503';
-import DocumentRepository from '../repositories/DocumentRepository';
 import nodemailer from 'nodemailer';
+import AuthService from './AuthService';
+import { LoginResponseType } from '../types/auth';
 
 interface IEmailService {
-    // createDocument(payload: Doc503Input): Promise<Doc503Output>;
+    send2Fa(userEmail: string): void;
+    verifyCode(
+        userEmail: string,
+        enteredCode: string
+    ): Promise<LoginResponseType>;
 }
 
 class EmailService implements IEmailService {
-    constructor() {}
-    // async createDocument(payload: Doc503Input): Promise<Doc503Output> {
-    //     // const slug = slugify(payload.userId);
-    //     // const role = await RoleRepository.getRoleBySlug(slug);
-    //     //
-    //     // if (role) {
-    //     //   throw new Error('Role is exist');
-    //     // }
-    //
-    //     return DocumentRepository.createDocument({
-    //         ...payload
-    //     });
-    // }
+    private verificationCodes: Map<string, string>;
 
-    send2Fa(userEmail: string) {
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASSWORD
+    constructor() {
+        this.verificationCodes = new Map();
+    }
+
+    private generateVerificationCode(): string {
+        return Math.floor(1000 + Math.random() * 9000).toString();
+    }
+
+    public send2Fa(userEmail: string): void {
+        try {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASSWORD
+                }
+            });
+
+            const verificationCode = this.generateVerificationCode();
+
+            // Store the code with the user's email
+            this.verificationCodes.delete(userEmail);
+            this.verificationCodes.set(userEmail, verificationCode);
+
+            // Send the verification code via email
+            transporter.sendMail({
+                from: process.env.EMAIL_USER,
+                to: userEmail,
+                subject: 'Shield Authentication Code',
+                text: `Your verification code is: ${verificationCode}`
+            });
+
+            console.log('Email sent successfully');
+        } catch (error) {
+            console.error('Error sending email:', error);
+            // Optionally, you can throw the error again or handle it in a way that makes sense for your application.
+            // For example, you might want to log the error or inform the user about the issue.
+            // throw new Error('Failed to send 2FA email');
+        }
+    }
+
+    public async verifyCode(
+        userEmail: string,
+        enteredCode: string
+    ): Promise<LoginResponseType> {
+        const storedCode = this.verificationCodes.get(userEmail);
+
+        if (storedCode === enteredCode) {
+            // Code is valid, do something here
+            try {
+                console.log('Code confirmed');
+                const result = await AuthService.getUserLoginData(userEmail);
+                this.verificationCodes.delete(userEmail);
+                return result;
+            } catch (error) {
+                // Handle errors from AuthService.getUserLoginData if needed
+                console.error('Error getting user login data:', error);
+                throw new Error('Failed to get user login data');
             }
-        });
-
-        const generateVerificationCode = () => {
-            return Math.floor(1000 + Math.random() * 9000).toString();
-        };
-
-        const verificationCodes = new Map<string, string>();
-
-        const verificationCode = generateVerificationCode();
-
-        // Store the code with the user's email
-        verificationCodes.set(userEmail, verificationCode);
-
-        // Send the verification code via email
-        transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: userEmail,
-            subject: 'Two-Factor Authentication Code',
-            text: `Your verification code is: ${verificationCode}`
-        });
+        } else {
+            // Code is invalid, do something here
+            return Promise.reject(new Error('Invalid verification code'));
+        }
     }
 }
 

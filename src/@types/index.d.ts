@@ -1,4 +1,6 @@
-import 'express';
+// import 'express';
+// import { UserOutput } from '../api/models/User';
+
 import { UserOutput } from '../api/models/User';
 
 declare global {

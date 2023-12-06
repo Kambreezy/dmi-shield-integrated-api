@@ -1,16 +1,16 @@
 {
-    "urn": "urn:mediator:tutorial_scaffold",
+    "urn": "urn:mediator:tutorial_mssql",
     "version": "1.0.0",
-    "name": "Scaffold Mediator",
-    "description": "Tutorial Scaffold Mediator",
+    "name": "MSSQL Mediator",
+    "description": "MSSQL Mediator",
     "defaultChannelConfig": [
         {
-            "name": "Bootstrap Scaffold Mediator",
-            "urlPattern": "^/scaffold$",
+            "name": "MSSQL Mediator",
+            "urlPattern": "^/api/v1/documents$",
             "routes": [
                 {
-                    "name": "Bootstrap Scaffold Mediator Route",
-                    "host": "scaffold",
+                    "name": "MSSQL Mediator Route",
+                    "host": "cholera",
                     "port": "3000",
                     "primary": true,
                     "type": "http"
@@ -23,8 +23,8 @@
     ],
     "endpoints": [
         {
-            "name": "Bootstrap Scaffold Mediator Endpoint",
-            "host": "scaffold",
+            "name": "MSSQL Mediator Endpoint",
+            "host": "localhost",
             "port": "3000",
             "primary": true,
             "type": "http"

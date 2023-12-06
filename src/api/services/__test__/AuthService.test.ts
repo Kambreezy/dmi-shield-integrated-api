@@ -1,7 +1,7 @@
 import AuthService from '../AuthService';
 import UserRepository from '../../repositories/UserRepository';
 import mockResource from './mockResource';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import JWT from '../../../utils/jwt';
 
 jest.mock('../../repositories/UserRepository');
