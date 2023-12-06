@@ -11,11 +11,8 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
+    <li><a href="#built-with">Built With</a>
+      </li>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -31,19 +28,6 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
-
-Building project with standardized structure could save much our time. We could focus on business process without considering too much on project structure. On the other hand, a good project structure should be clean, nice refactored, and easy to maintain.
-
-Here's why:
-
--   Your time should be focused on creating something amazing. A project that solves a problem and helps others.
--   You shouldn't be doing the same tasks over and over like structuring project
--   You should implement dry principles to the rest of your life
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this project template!
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
@@ -113,9 +97,9 @@ Before installation, make sure you have the following prerequisites
 
 ### Installation
 
-1. Clone the repo or simply select [use this template](https://github.com/arifintahu/project-structure-api/generate)
+1. Clone the repo
     ```sh
-    git clone https://github.com/arifintahu/project-structure-api.git
+    git clone git@github.com:CENTERS-FOR-INTERNATIONAL-PROGRAMS/dmi-shield-portal-api.git
     ```
 2. Install NPM packages
     ```sh
