@@ -83,8 +83,7 @@ This project structure is built using
 
 ## Getting Started
 
-To start project, just clone this repo or [Use this template](https://github.com/arifintahu/project-structure-api/generate)
-
+To start project, just clone this repo 
 ### Prerequisites
 
 Before installation, make sure you have the following prerequisites
