@@ -10,7 +10,7 @@
             "routes": [
                 {
                     "name": "MSSQL Mediator Route",
-                    "host": "localhost",
+                    "host": "cholera",
                     "port": "3000",
                     "primary": true,
                     "type": "http"

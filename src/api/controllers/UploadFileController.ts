@@ -51,14 +51,25 @@ class UploadFileController {
                         .pipe(csv()) // Use headers: true to treat the first row as headers
 
                         .on('data', (data) => {
-                            if (
-                                Object.values(data).some(
-                                    (value) =>
-                                        value !== '' &&
-                                        value !== null &&
-                                        value !== undefined
-                                )
-                            ) {
+                            // if (
+                            //     Object.values(data).some(
+                            //         (value) =>
+                            //             value !== '' &&
+                            //             value !== null &&
+                            //             value !== undefined
+                            //     )
+                            // ) {
+                            //     fileResult.push(data);
+                            // }
+
+                            const isNonEmptyRow = Object.values(data).some(
+                                (value) =>
+                                    value !== '' &&
+                                    value !== null &&
+                                    value !== undefined
+                            );
+
+                            if (isNonEmptyRow) {
                                 fileResult.push(data);
                             }
                         })
@@ -75,19 +86,7 @@ class UploadFileController {
                 });
             });
 
-            if (fileResult.length > 1) {
-                isEmptyFile = false;
-            }
-
-            if (isEmptyFile) {
-                res.status(400).send({
-                    message: 'The CSV File is empty',
-                    data: null,
-                    success: false
-                });
-
-                return;
-            }
+            console.log('File length', fileResult.length);
 
             for (let i = 0; i < fileResult.length; i++) {
                 if (i === 0) {
