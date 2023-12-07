@@ -92,7 +92,7 @@ Before installation, make sure you have the following prerequisites
     ```sh
     npm install npm@latest -g
     ```
--   Postgresql server
+-   MSSQL server
 
 ### Installation
 

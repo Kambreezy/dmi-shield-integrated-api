@@ -3,7 +3,6 @@ dist
 .env
 logs
 coverage
-**/database
 **/logs
 .idea
 **/.idea
