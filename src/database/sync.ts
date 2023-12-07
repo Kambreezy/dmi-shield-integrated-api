@@ -7,10 +7,15 @@ import Document503 from '../api/models/Document503';
 import DocumentSari from '../api/models/DocumentSari';
 
 const syncTables = () => {
-    User.sync();
-    Role.sync();
-    Document503.sync();
-    DocumentSari.sync();
+    try {
+        User.sync();
+        Role.sync();
+        Document503.sync();
+        DocumentSari.sync();
+        console.log('Tables synchronized successfully.');
+    } catch (error) {
+        console.error('Error synchronizing tables:', error);
+    }
 };
 
 syncTables();
