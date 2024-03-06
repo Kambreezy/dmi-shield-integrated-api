@@ -1,24 +1,6 @@
 import { db } from '../../database/config';
 import { DataTypes, Model, Optional } from 'sequelize';
-import { Task } from 'utils/helpers/ebs';
 
-type WithUnflattenedProps<T> = {
-    [Property in keyof T as ParentOf<Property>]: {
-        [ChildProperty in ChildOf<Property>]: T[`${ParentOf<Property>}_${ChildProperty}` &
-            keyof T];
-    };
-};
-
-type ParentOf<T> = T extends `${infer Parent}_${string}` ? Parent : never;
-type ChildOf<T> = T extends `${string}_${infer Child}` ? Child : never;
-
-type Id<T> = {} & {
-    [P in keyof T]: T[P];
-};
-
-// export interface DocumentEbsAttributes extends Id<WithUnflattenedProps<Task>>{
-
-// }
 
 export interface DocumentEbsAttributes {
     _ID: string;
@@ -300,7 +282,8 @@ DocumentEbs.init(
     {
         _ID: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         _STATUS: {
             type: DataTypes.STRING,
@@ -816,7 +799,11 @@ DocumentEbs.init(
         freezeTableName: true,
         timestamps: true,
         paranoid: true,
-        sequelize: db
+        sequelize: db,
+        indexes: [{
+            fields: ['_ID'],
+            unique: true
+        }],
     }
 );
 

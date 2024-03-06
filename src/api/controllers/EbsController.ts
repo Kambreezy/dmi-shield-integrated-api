@@ -24,21 +24,22 @@ class EbsController {
             console.log('EBS Response Status Code:', res.statusCode);
             console.log('Date in Response header:', headerDate);
 
-            const data = await ebsResponse.json()
+            const data = await ebsResponse.json();
 
-            const taskPage = data["taskPage"] as TaskPage
+            const taskPage = data['taskPage'] as TaskPage;
             const page = taskPage.page;
             const pages = taskPage.pages;
 
             if (taskPage.docs.length > 0) {
                 for (let index = 0; index < taskPage.docs.length; index++) {
                     const doc = taskPage.docs[index];
-
-                    console.log(this)
                     const ebsDoc = formatTask(doc);
 
                     try {
-                        await DocumentService.createEbsDocument(ebsDoc);
+                        const data = await DocumentService.createEbsDocument(
+                            ebsDoc
+                        );
+                        console.log(data);
                     } catch (error) {
                         console.log(error);
                     }
@@ -47,7 +48,9 @@ class EbsController {
 
             res.status(200).send({
                 message: 'Fetched EBS Data succesfully',
-                data: null,
+                data: {
+                    processed_docs: taskPage.docs.length
+                },
                 success: true
             });
         } catch (error) {
@@ -56,8 +59,6 @@ class EbsController {
             next(error);
         }
     }
-
-    
 }
 
 export default new EbsController();

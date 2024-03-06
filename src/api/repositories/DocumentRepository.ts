@@ -1,4 +1,7 @@
-import DocumentEbs, { DocEbsInput, DocumentEbsAttributes } from '../models/DocumentEBS';
+import DocumentEbs, {
+    DocEbsInput,
+    DocumentEbsAttributes
+} from '../models/DocumentEBS';
 import Document503, { Doc503Input, Doc503Output } from '../models/Document503';
 import DocumentSari, {
     DocSariInput,
@@ -20,8 +23,8 @@ class DocumentRepository implements IDocumentRepository {
         return DocumentSari.create(payload);
     }
 
-    createEbsDocument(payload: DocEbsInput): Promise<DocumentEbsAttributes> {
-        return DocumentEbs.create(payload);
+    createEbsDocument(payload: DocEbsInput): Promise<[DocumentEbs, boolean]> {
+        return DocumentEbs.upsert(payload, { conflictFields: ['_ID'] });
     }
 }
 
