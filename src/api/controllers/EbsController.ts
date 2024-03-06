@@ -1,8 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import fetch from 'node-fetch';
-
-import { DocEbsInput } from '../models/DocumentEBS';
-import { Task, TaskPage, formatTask } from '../../utils/helpers/ebs';
+import { TaskPage, formatTask } from '../../utils/helpers/ebs';
 import DocumentService from '../services/DocumentService';
 
 class EbsController {
@@ -33,8 +31,7 @@ class EbsController {
             let errorCount = 0;
 
             if (taskPage.docs.length > 0) {
-                for (let index = 0; index < taskPage.docs.length; index++) {
-                    const doc = taskPage.docs[index];
+                for (const doc of taskPage.docs) {
                     const ebsDoc = formatTask(doc);
 
                     try {

@@ -1,7 +1,6 @@
 import { db } from '../../database/config';
 import { DataTypes, Model, Optional } from 'sequelize';
 
-
 export interface DocumentEbsAttributes {
     _ID: string;
     _STATUS: string;
@@ -38,7 +37,6 @@ export interface DocumentEbsAttributes {
     UNIT_PARENT_DATELASTREPORTED_UPDATEDAT: Date;
     UNIT_PARENT_DATELASTREPORTED_CREATEDAT: Date;
 
-
     UNIT_PARENT_PARENT_ID: string;
     UNIT_PARENT_PARENT_NAME: string;
     UNIT_PARENT_PARENT_CREATEDAT: Date;
@@ -60,7 +58,6 @@ export interface DocumentEbsAttributes {
     USER_CREATEDAT: Date;
     USER_UPDATEDAT: Date;
     USER_STATUS: string;
-
 
     SIGNALID: string;
     SIGNAL: string;
@@ -159,7 +156,6 @@ export interface DocumentEbsAttributes {
     CEBS_ESCALATIONFORM_CREATEDAT: Date;
     CEBS_ESCALATIONFORM_UPDATEDAT: Date;
 
-
     HEBS_ID: string;
     HEBS_CREATEDAT: Date;
     HEBS_UPDATEDAT: Date;
@@ -251,8 +247,6 @@ export interface DocumentEbsAttributes {
     HEBS_ESCALATIONFORM_VIA: string;
     HEBS_ESCALATIONFORM_CREATEDAT: Date;
     HEBS_ESCALATIONFORM_UPDATEDAT: Date;
-
-
 
     VEBS_ID: string;
     VEBS_CREATEDAT: Date;
@@ -346,16 +340,127 @@ export interface DocumentEbsAttributes {
     VEBS_ESCALATIONFORM_CREATEDAT: Date;
     VEBS_ESCALATIONFORM_UPDATEDAT: Date;
 
+    LEBS_ID: string;
+    LEBS_CREATEDAT: Date;
+    LEBS_UPDATEDAT: Date;
+
+    LEBS_VERIFICATIONFORM_ID: string;
+    LEBS_VERIFICATIONFORM_USER: string;
+    LEBS_VERIFICATIONFORM_DESCRIPTION: string;
+    LEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: string;
+    LEBS_VERIFICATIONFORM_UPDATEDSIGNAL: string;
+    LEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: string;
+    LEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: Date;
+    LEBS_VERIFICATIONFORM_INFORMANT: string;
+    LEBS_VERIFICATIONFORM_OTHERINFORMANT: string;
+    LEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: string;
+    LEBS_VERIFICATIONFORM_DATEVERIFIED: Date;
+    LEBS_VERIFICATIONFORM_ISSTILLHAPPENING: string;
+    LEBS_VERIFICATIONFORM_DATESCDSCINFORMED: Date;
+    LEBS_VERIFICATIONFORM_VIA: string;
+    LEBS_VERIFICATIONFORM_SPOT: string;
+    LEBS_VERIFICATIONFORM_CREATEDAT: Date;
+    LEBS_VERIFICATIONFORM_UPDATEDAT: Date;
+
+    LEBS_INVESTIGATIONFORM_ID: string;
+    LEBS_INVESTIGATIONFORM_USER: string;
+    LEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: Date;
+    LEBS_INVESTIGATIONFORM_DATEINVESTIGATIONSTARTED: Date;
+    LEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: Date;
+    LEBS_INVESTIGATIONFORM_DATERRTNOTIFIED: Date;
+    LEBS_INVESTIGATIONFORM_ISCOVID19WORKINGCASEDEFINITIONMET: string;
+    LEBS_INVESTIGATIONFORM_ISEVENTSETTINGPROMOTINGSPREAD: string;
+    LEBS_INVESTIGATIONFORM_MEASUREHANDHYGIENE: string;
+    LEBS_INVESTIGATIONFORM_MEASURETEMPSCREENING: string;
+    LEBS_INVESTIGATIONFORM_MEASUREPHYSICALDISTANCING: string;
+    LEBS_INVESTIGATIONFORM_MEASURESOCIALDISTANCING: string;
+    LEBS_INVESTIGATIONFORM_MEASUREUSEOFMASKS: string;
+    LEBS_INVESTIGATIONFORM_MEASUREVENTILATION: string;
+    LEBS_INVESTIGATIONFORM_SYMPTOMS: string;
+    LEBS_INVESTIGATIONFORM_SYMPTOMSOTHER: string;
+    LEBS_INVESTIGATIONFORM_ISSAMPLESCOLLECTED: string;
+    LEBS_INVESTIGATIONFORM_LABRESULTS: string;
+    LEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: string;
+    LEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: string;
+    LEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: string;
+    LEBS_INVESTIGATIONFORM_EVENTCATEGORIES: string;
+    LEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: string;
+    LEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: string;
+    LEBS_INVESTIGATIONFORM_VIA: string;
+    LEBS_INVESTIGATIONFORM_SPOT: string;
+    LEBS_INVESTIGATIONFORM_CREATEDAT: Date;
+    LEBS_INVESTIGATIONFORM_UPDATEDAT: Date;
+
+    LEBS_RESPONSEFORM_ID: string;
+    LEBS_RESPONSEFORM_USER: string;
+    LEBS_RESPONSEFORM_DATESCMOHINFORMED: Date;
+    LEBS_RESPONSEFORM_DATERESPONSESTARTED: Date;
+    LEBS_RESPONSEFORM_DATESAMPLESCOLLECTED: Date;
+    LEBS_RESPONSEFORM_DATEOFTESTRESULTS: Date;
+
+    LEBS_RESPONSEFORM_ISCOVID19WORKINGCASEDEFINITIONMET: string;
+    LEBS_RESPONSEFORM_ISCIFFILLEDANDSAMPLESCOLLECTED: string;
+    LEBS_RESPONSEFORM_REASONSNOSAMPLECOLLECTEDOTHER: string;
+    LEBS_RESPONSEFORM_REASONSNOSAMPLECOLLECTED: string;
+    LEBS_RESPONSEFORM_ISHUMANSQUARANTINEDFOLLOWEDUP: string;
+    LEBS_RESPONSEFORM_EVENTSTATUS: string;
+    LEBS_RESPONSEFORM_RESPONSEACTIVITIES: string;
+    LEBS_RESPONSEFORM_RESPONSEACTIVITIESOTHER: string;
+    LEBS_RESPONSEFORM_ADDITIONALRESPONSEACTIVITIES: string;
+    LEBS_RESPONSEFORM_HUMANSQUARANTINEDSELF: number;
+    LEBS_RESPONSEFORM_HUMANSQUARANTINEDSCHOOL: number;
+    LEBS_RESPONSEFORM_HUMANSQUARANTINEDINSTITUTIONAL: number;
+    LEBS_RESPONSEFORM_HUMANSISOLATIONSCHOOL: number;
+    LEBS_RESPONSEFORM_HUMANSISOLATIONHEALTHFACILITY: number;
+    LEBS_RESPONSEFORM_HUMANSISOLATIONHOME: number;
+    LEBS_RESPONSEFORM_HUMANSISOLATIONINSTITUTIONAL: number;
+    LEBS_RESPONSEFORM_HUMANSDEAD: number;
+    LEBS_RESPONSEFORM_HUMANSPOSITIVE: number;
+    LEBS_RESPONSEFORM_HUMANSTESTED: number;
+    LEBS_RESPONSEFORM_HUMANSCASES: number;
+    LEBS_RESPONSEFORM_HUMANSQUARANTINED: number;
+    LEBS_RESPONSEFORM_QUARANTINETYPES: string;
+    LEBS_RESPONSEFORM_ISHUMANSISOLATED: string;
+    LEBS_RESPONSEFORM_ISOLATIONTYPES: string;
+    LEBS_RESPONSEFORM_EVENTSTATUSES: string;
+    LEBS_RESPONSEFORM_ADDITIONALINFORMATION: string;
+    LEBS_RESPONSEFORM_VIA: string;
+    LEBS_RESPONSEFORM_SPOT: string;
+    LEBS_RESPONSEFORM_CREATEDAT: Date;
+    LEBS_RESPONSEFORM_UPDATEDAT: Date;
+
+    LEBS_SUMMARYFORM_ID: string;
+    LEBS_SUMMARYFORM_USER: string;
+    LEBS_SUMMARYFORM_EVENTSTATUS: string;
+    LEBS_SUMMARYFORM_ESCALATEDTO: string;
+    LEBS_SUMMARYFORM_CAUSE: string;
+    LEBS_SUMMARYFORM_VIA: string;
+    LEBS_SUMMARYFORM_SPOT: string;
+    LEBS_SUMMARYFORM_CREATEDAT: Date;
+    LEBS_SUMMARYFORM_UPDATEDAT: Date;
+
+    LEBS_ESCALATIONFORM_ID: string;
+    LEBS_ESCALATIONFORM_USER: string;
+    LEBS_ESCALATIONFORM_EVENTTYPE: string;
+    LEBS_ESCALATIONFORM_DATERESPONSESTARTED: Date;
+    LEBS_ESCALATIONFORM_REASON: string;
+    LEBS_ESCALATIONFORM_REASONOTHER: string;
+    LEBS_ESCALATIONFORM_DATEESCALATED: Date;
+    LEBS_ESCALATIONFORM_VIA: string;
+    LEBS_ESCALATIONFORM_CREATEDAT: Date;
+    LEBS_ESCALATIONFORM_UPDATEDAT: Date;
+
     id: number;
 }
 
 export type DocEbsInput = Optional<DocumentEbsAttributes, 'id'>;
 
-
 class DocumentEbs
     extends Model<DocumentEbsAttributes>
     implements DocumentEbsAttributes
 {
+    
+
     public USER_ID: string;
     public USER_CREATEDAT: Date;
     public USER_UPDATEDAT: Date;
@@ -411,7 +516,6 @@ class DocumentEbs
     public UNIT_PARENT_PARENT_DATELASTREPORTED_LIVE: Date;
     public UNIT_PARENT_PARENT_DATELASTREPORTED_UPDATEDAT: Date;
     public UNIT_PARENT_PARENT_DATELASTREPORTED_CREATEDAT: Date;
-
 
     public SIGNALID: string;
     public SIGNAL: string;
@@ -591,7 +695,6 @@ class DocumentEbs
     public HEBS_ESCALATIONFORM_CREATEDAT: Date;
     public HEBS_ESCALATIONFORM_UPDATEDAT: Date;
 
-
     public VEBS_ID: string;
     public VEBS_CREATEDAT: Date;
     public VEBS_UPDATEDAT: Date;
@@ -679,6 +782,111 @@ class DocumentEbs
     public VEBS_ESCALATIONFORM_CREATEDAT: Date;
     public VEBS_ESCALATIONFORM_UPDATEDAT: Date;
 
+
+    public LEBS_ID: string;
+    public LEBS_CREATEDAT: Date;
+    public LEBS_UPDATEDAT: Date;
+    public LEBS_VERIFICATIONFORM_ID: string;
+    public LEBS_VERIFICATIONFORM_USER: string;
+    public LEBS_VERIFICATIONFORM_DESCRIPTION: string;
+    public LEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: string;
+    public LEBS_VERIFICATIONFORM_UPDATEDSIGNAL: string;
+    public LEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: string;
+    public LEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: Date;
+    public LEBS_VERIFICATIONFORM_INFORMANT: string;
+    public LEBS_VERIFICATIONFORM_OTHERINFORMANT: string;
+    public LEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: string;
+    public LEBS_VERIFICATIONFORM_DATEVERIFIED: Date;
+    public LEBS_VERIFICATIONFORM_ISSTILLHAPPENING: string;
+    public LEBS_VERIFICATIONFORM_DATESCDSCINFORMED: Date;
+    public LEBS_VERIFICATIONFORM_VIA: string;
+    public LEBS_VERIFICATIONFORM_SPOT: string;
+    public LEBS_VERIFICATIONFORM_CREATEDAT: Date;
+    public LEBS_VERIFICATIONFORM_UPDATEDAT: Date;
+    public LEBS_INVESTIGATIONFORM_ID: string;
+    public LEBS_INVESTIGATIONFORM_USER: string;
+    public LEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: Date;
+    public LEBS_INVESTIGATIONFORM_DATEINVESTIGATIONSTARTED: Date;
+    public LEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: Date;
+    public LEBS_INVESTIGATIONFORM_DATERRTNOTIFIED: Date;
+    public LEBS_INVESTIGATIONFORM_ISCOVID19WORKINGCASEDEFINITIONMET: string;
+    public LEBS_INVESTIGATIONFORM_ISEVENTSETTINGPROMOTINGSPREAD: string;
+    public LEBS_INVESTIGATIONFORM_MEASUREHANDHYGIENE: string;
+    public LEBS_INVESTIGATIONFORM_MEASURETEMPSCREENING: string;
+    public LEBS_INVESTIGATIONFORM_MEASUREPHYSICALDISTANCING: string;
+    public LEBS_INVESTIGATIONFORM_MEASURESOCIALDISTANCING: string;
+    public LEBS_INVESTIGATIONFORM_MEASUREUSEOFMASKS: string;
+    public LEBS_INVESTIGATIONFORM_MEASUREVENTILATION: string;
+    public LEBS_INVESTIGATIONFORM_SYMPTOMS: string;
+    public LEBS_INVESTIGATIONFORM_SYMPTOMSOTHER: string;
+    public LEBS_INVESTIGATIONFORM_ISSAMPLESCOLLECTED: string;
+    public LEBS_INVESTIGATIONFORM_LABRESULTS: string;
+    public LEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: string;
+    public LEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: string;
+    public LEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: string;
+    public LEBS_INVESTIGATIONFORM_EVENTCATEGORIES: string;
+    public LEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: string;
+    public LEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: string;
+    public LEBS_INVESTIGATIONFORM_VIA: string;
+    public LEBS_INVESTIGATIONFORM_SPOT: string;
+    public LEBS_INVESTIGATIONFORM_CREATEDAT: Date;
+    public LEBS_INVESTIGATIONFORM_UPDATEDAT: Date;
+    public LEBS_RESPONSEFORM_ID: string;
+    public LEBS_RESPONSEFORM_USER: string;
+    public LEBS_RESPONSEFORM_DATESCMOHINFORMED: Date;
+    public LEBS_RESPONSEFORM_DATERESPONSESTARTED: Date;
+    public LEBS_RESPONSEFORM_DATESAMPLESCOLLECTED: Date;
+    public LEBS_RESPONSEFORM_DATEOFTESTRESULTS: Date;
+    public LEBS_RESPONSEFORM_ISCOVID19WORKINGCASEDEFINITIONMET: string;
+    public LEBS_RESPONSEFORM_ISCIFFILLEDANDSAMPLESCOLLECTED: string;
+    public LEBS_RESPONSEFORM_REASONSNOSAMPLECOLLECTEDOTHER: string;
+    public LEBS_RESPONSEFORM_REASONSNOSAMPLECOLLECTED: string;
+    public LEBS_RESPONSEFORM_RESPONSEACTIVITIESOTHER: string;
+    public LEBS_RESPONSEFORM_ISHUMANSQUARANTINEDFOLLOWEDUP: string;
+    public LEBS_RESPONSEFORM_EVENTSTATUS: string;
+    public LEBS_RESPONSEFORM_RESPONSEACTIVITIES: string;
+    public LEBS_RESPONSEFORM_ADDITIONALRESPONSEACTIVITIES: string;
+    public LEBS_RESPONSEFORM_HUMANSQUARANTINEDSELF: number;
+    public LEBS_RESPONSEFORM_HUMANSQUARANTINEDSCHOOL: number;
+    public LEBS_RESPONSEFORM_HUMANSQUARANTINEDINSTITUTIONAL: number;
+    public LEBS_RESPONSEFORM_HUMANSISOLATIONSCHOOL: number;
+    public LEBS_RESPONSEFORM_HUMANSISOLATIONHEALTHFACILITY: number;
+    public LEBS_RESPONSEFORM_HUMANSISOLATIONHOME: number;
+    public LEBS_RESPONSEFORM_HUMANSISOLATIONINSTITUTIONAL: number;
+    public LEBS_RESPONSEFORM_HUMANSDEAD: number;
+    public LEBS_RESPONSEFORM_HUMANSPOSITIVE: number;
+    public LEBS_RESPONSEFORM_HUMANSTESTED: number;
+    public LEBS_RESPONSEFORM_HUMANSCASES: number;
+    public LEBS_RESPONSEFORM_HUMANSQUARANTINED: number;
+    public LEBS_RESPONSEFORM_QUARANTINETYPES: string;
+    public LEBS_RESPONSEFORM_ISHUMANSISOLATED: string;
+    public LEBS_RESPONSEFORM_ISOLATIONTYPES: string;
+    public LEBS_RESPONSEFORM_EVENTSTATUSES: string;
+    public LEBS_RESPONSEFORM_ADDITIONALINFORMATION: string;
+    public LEBS_RESPONSEFORM_VIA: string;
+    public LEBS_RESPONSEFORM_SPOT: string;
+    public LEBS_RESPONSEFORM_CREATEDAT: Date;
+    public LEBS_RESPONSEFORM_UPDATEDAT: Date;
+    public LEBS_SUMMARYFORM_ID: string;
+    public LEBS_SUMMARYFORM_USER: string;
+    public LEBS_SUMMARYFORM_EVENTSTATUS: string;
+    public LEBS_SUMMARYFORM_ESCALATEDTO: string;
+    public LEBS_SUMMARYFORM_CAUSE: string;
+    public LEBS_SUMMARYFORM_VIA: string;
+    public LEBS_SUMMARYFORM_SPOT: string;
+    public LEBS_SUMMARYFORM_CREATEDAT: Date;
+    public LEBS_SUMMARYFORM_UPDATEDAT: Date;
+    public LEBS_ESCALATIONFORM_ID: string;
+    public LEBS_ESCALATIONFORM_USER: string;
+    public LEBS_ESCALATIONFORM_EVENTTYPE: string;
+    public LEBS_ESCALATIONFORM_DATERESPONSESTARTED: Date;
+    public LEBS_ESCALATIONFORM_REASON: string;
+    public LEBS_ESCALATIONFORM_REASONOTHER: string;
+    public LEBS_ESCALATIONFORM_DATEESCALATED: Date;
+    public LEBS_ESCALATIONFORM_VIA: string;
+    public LEBS_ESCALATIONFORM_CREATEDAT: Date;
+    public LEBS_ESCALATIONFORM_UPDATEDAT: Date;
+
     public id: number;
 }
 
@@ -721,13 +929,13 @@ DocumentEbs.init(
             type: DataTypes.STRING,
             allowNull: true
         },
-        UNIT_TYPE:  {
+        UNIT_TYPE: {
             type: DataTypes.STRING,
             allowNull: false
         },
         UNIT_SUGGESTIONS: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: true
         },
         UNIT_UNITS: {
             type: DataTypes.STRING,
@@ -818,7 +1026,6 @@ DocumentEbs.init(
             allowNull: true
         },
 
-
         UNIT_PARENT_PARENT_ID: {
             type: DataTypes.STRING,
             allowNull: true
@@ -898,25 +1105,24 @@ DocumentEbs.init(
         },
         USER_STATUS: {
             type: DataTypes.STRING,
-            allowNull: false 
+            allowNull: false
         },
 
-        
         SIGNALID: {
             type: DataTypes.STRING,
-            allowNull: false 
+            allowNull: false
         },
         SIGNAL: {
             type: DataTypes.STRING,
-            allowNull: false 
+            allowNull: false
         },
         SUGGESTIONS: {
             type: DataTypes.STRING,
-            allowNull: false 
+            allowNull: false
         },
         UNITS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ID: {
             type: DataTypes.STRING,
@@ -932,338 +1138,336 @@ DocumentEbs.init(
         },
         CEBS_VERIFICATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_SOURCE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_DESCRIPTION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_UPDATEDSIGNAL: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_INFORMANT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_OTHERINFORMANT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_DATEVERIFIED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_THREATTO: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_DATESCDSCINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_VERIFICATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_SYMPTOMS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_HUMANCASES: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_HUMANSDEAD: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ANIMALSCASES: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ANIMALSDEAD: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_CAUSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_LABRESULTS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_EVENTCATEGORIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_INVESTIGATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_EVENTTYPE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_DATESCMOHINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_DATERESPONSESTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_RESPONSEACTIVITIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_RECOMMENDATIONS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_DATEESCALATED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_DATEOFREPORT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_RESPONSEFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_EVENTSTATUS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_ESCALATEDTO: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_CAUSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_SUMMARYFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_EVENTTYPE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_DATERESPONSESTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_REASON: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_REASONOTHER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_DATEESCALATED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         CEBS_ESCALATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
-
-
 
         HEBS_ID: {
             type: DataTypes.STRING,
@@ -1279,339 +1483,336 @@ DocumentEbs.init(
         },
         HEBS_VERIFICATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_SOURCE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_DESCRIPTION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_UPDATEDSIGNAL: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_INFORMANT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_OTHERINFORMANT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_DATEVERIFIED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_THREATTO: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_DATESCDSCINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_VERIFICATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_SYMPTOMS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_HUMANCASES: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_HUMANSDEAD: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ANIMALSCASES: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ANIMALSDEAD: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_CAUSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_LABRESULTS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_EVENTCATEGORIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_INVESTIGATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_EVENTTYPE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_DATESCMOHINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_DATERESPONSESTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_RESPONSEACTIVITIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_RECOMMENDATIONS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_DATEESCALATED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_DATEOFREPORT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_RESPONSEFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_EVENTSTATUS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_ESCALATEDTO: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_CAUSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_SUMMARYFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_EVENTTYPE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_DATERESPONSESTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_REASON: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_REASONOTHER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_DATEESCALATED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         HEBS_ESCALATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
-
-
-
 
         VEBS_ID: {
             type: DataTypes.STRING,
@@ -1627,344 +1828,755 @@ DocumentEbs.init(
         },
         VEBS_VERIFICATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_SOURCE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_DESCRIPTION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_UPDATEDSIGNAL: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_INFORMANT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_OTHERINFORMANT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_DATEVERIFIED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_THREATTO: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_DATESCDSCINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_VERIFICATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_SYMPTOMS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_HUMANCASES: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_HUMANSDEAD: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ANIMALSCASES: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ANIMALSDEAD: {
             type: DataTypes.INTEGER,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_CAUSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_LABRESULTS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_EVENTCATEGORIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_INVESTIGATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_EVENTTYPE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_DATESCMOHINFORMED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_DATERESPONSESTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_RESPONSEACTIVITIES: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_RECOMMENDATIONS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_DATEESCALATED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_DATEOFREPORT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_ADDITIONALINFORMATION: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_RESPONSEFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_EVENTSTATUS: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_ESCALATEDTO: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_CAUSE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_SPOT: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_SUMMARYFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_ID: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_USER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_EVENTTYPE: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_DATERESPONSESTARTED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_REASON: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_REASONOTHER: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_DATEESCALATED: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_VIA: {
             type: DataTypes.STRING,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_CREATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
         VEBS_ESCALATIONFORM_UPDATEDAT: {
             type: DataTypes.DATE,
-            allowNull: true 
+            allowNull: true
         },
-
+        LEBS_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_DESCRIPTION: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_UPDATEDSIGNAL: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_INFORMANT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_OTHERINFORMANT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_DATEVERIFIED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_ISSTILLHAPPENING: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_DATESCDSCINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_VERIFICATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_DATEINVESTIGATIONSTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_DATERRTNOTIFIED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_ISCOVID19WORKINGCASEDEFINITIONMET: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_ISEVENTSETTINGPROMOTINGSPREAD: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_MEASUREHANDHYGIENE: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_MEASURETEMPSCREENING: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_MEASUREPHYSICALDISTANCING: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_MEASURESOCIALDISTANCING: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_MEASUREUSEOFMASKS: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_MEASUREVENTILATION: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_SYMPTOMS: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_SYMPTOMSOTHER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_ISSAMPLESCOLLECTED: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_LABRESULTS: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_EVENTCATEGORIES: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_INVESTIGATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        
+        LEBS_RESPONSEFORM_DATESCMOHINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_DATERESPONSESTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_DATESAMPLESCOLLECTED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_DATEOFTESTRESULTS: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_ISCOVID19WORKINGCASEDEFINITIONMET: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_ISCIFFILLEDANDSAMPLESCOLLECTED: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_REASONSNOSAMPLECOLLECTEDOTHER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_REASONSNOSAMPLECOLLECTED: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_ISHUMANSQUARANTINEDFOLLOWEDUP: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_EVENTSTATUS: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_RESPONSEACTIVITIES: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_RESPONSEACTIVITIESOTHER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_ADDITIONALRESPONSEACTIVITIES: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSQUARANTINEDSELF: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSQUARANTINEDSCHOOL: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSQUARANTINEDINSTITUTIONAL: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSISOLATIONSCHOOL: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSISOLATIONHEALTHFACILITY: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSISOLATIONHOME: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSISOLATIONINSTITUTIONAL: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSDEAD: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSPOSITIVE: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSTESTED: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSCASES: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_HUMANSQUARANTINED: {
+            type: DataTypes.INTEGER,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_QUARANTINETYPES: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_ISHUMANSISOLATED: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_ISOLATIONTYPES: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_EVENTSTATUSES: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_RESPONSEFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_EVENTSTATUS: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_ESCALATEDTO: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_CAUSE: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_SUMMARYFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_EVENTTYPE: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_DATERESPONSESTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_REASON: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_REASONOTHER: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_DATEESCALATED: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        LEBS_ESCALATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
 
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         }
-        
     },
     {
         tableName: 'central-raw-ebs-linelist',
@@ -1972,10 +2584,12 @@ DocumentEbs.init(
         timestamps: true,
         paranoid: true,
         sequelize: db,
-        indexes: [{
-            fields: ['_ID'],
-            unique: true
-        }],
+        indexes: [
+            {
+                fields: ['_ID'],
+                unique: true
+            }
+        ]
     }
 );
 

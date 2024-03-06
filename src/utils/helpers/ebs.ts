@@ -262,6 +262,9 @@ export type Task = {
         createdAt: Date;
         updatedAt: Date;
         verificationForm?: {
+            _id: string;
+            createdAt: Date;
+            updatedAt: Date;
             user: User;
             description: string;
             isMatchingSignal: string;
@@ -326,6 +329,7 @@ export type Task = {
             responseActivities: string[];
             additionalResponseActivities: string[];
             reasonsNoSampleCollected: string[];
+
             humansQuarantinedSelf: number;
             humansQuarantinedSchool: number;
             humansQuarantinedInstitutional: number;
@@ -815,6 +819,173 @@ export function formatTask(task: Task): DocEbsInput {
             task.vebs?.escalationForm?.dateEscalated,
         VEBS_ESCALATIONFORM_VIA: task.vebs?.escalationForm?.via,
         VEBS_ESCALATIONFORM_CREATEDAT: task.vebs?.escalationForm?.createdAt,
-        VEBS_ESCALATIONFORM_UPDATEDAT: task.vebs?.escalationForm?.updatedAt
+        VEBS_ESCALATIONFORM_UPDATEDAT: task.vebs?.escalationForm?.updatedAt,
+
+        LEBS_ID: task.lebs?._id,
+        LEBS_CREATEDAT: task.lebs?.createdAt,
+        LEBS_UPDATEDAT: task.lebs?.updatedAt,
+        LEBS_VERIFICATIONFORM_ID: task.lebs?.verificationForm?._id,
+        LEBS_VERIFICATIONFORM_USER: task.lebs?.verificationForm?.user._id,
+        LEBS_VERIFICATIONFORM_DESCRIPTION:
+            task.lebs?.verificationForm?.description,
+        LEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL:
+            task.lebs?.verificationForm?.isMatchingSignal,
+        LEBS_VERIFICATIONFORM_UPDATEDSIGNAL:
+            task.lebs?.verificationForm?.updatedSignal,
+        LEBS_VERIFICATIONFORM_ISREPORTEDBEFORE:
+            task.lebs?.verificationForm?.isReportedBefore,
+        LEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED:
+            task.lebs?.verificationForm?.dateHealthThreatStarted,
+        LEBS_VERIFICATIONFORM_INFORMANT: task.lebs?.verificationForm?.informant,
+        LEBS_VERIFICATIONFORM_OTHERINFORMANT:
+            task.lebs?.verificationForm?.otherInformant,
+        LEBS_VERIFICATIONFORM_ADDITIONALINFORMATION:
+            task.lebs?.verificationForm?.additionalInformation,
+        LEBS_VERIFICATIONFORM_DATEVERIFIED:
+            task.lebs?.verificationForm?.dateVerified,
+        LEBS_VERIFICATIONFORM_ISSTILLHAPPENING:
+            task.lebs?.verificationForm?.isStillHappening,
+        LEBS_VERIFICATIONFORM_DATESCDSCINFORMED:
+            task.lebs?.verificationForm?.dateSCDSCInformed,
+        LEBS_VERIFICATIONFORM_VIA: task.lebs?.verificationForm?.via,
+        LEBS_VERIFICATIONFORM_SPOT: task.lebs?.verificationForm?.spot,
+        LEBS_VERIFICATIONFORM_CREATEDAT: task.lebs?.verificationForm?.createdAt,
+        LEBS_VERIFICATIONFORM_UPDATEDAT: task.lebs?.verificationForm?.updatedAt,
+        LEBS_INVESTIGATIONFORM_ID: task.lebs?.investigationForm?._id,
+        LEBS_INVESTIGATIONFORM_USER: task.lebs?.investigationForm?.user._id,
+        LEBS_INVESTIGATIONFORM_DATESCDSCINFORMED:
+            task.lebs?.investigationForm?.dateSCDSCInformed,
+        LEBS_INVESTIGATIONFORM_DATEINVESTIGATIONSTARTED:
+            task.lebs?.investigationForm?.dateInvestigationStarted,
+        LEBS_INVESTIGATIONFORM_DATEEVENTSTARTED:
+            task.lebs?.investigationForm?.dateEventStarted,
+        LEBS_INVESTIGATIONFORM_DATERRTNOTIFIED:
+            task.lebs?.investigationForm?.dateRRTNotified,
+        LEBS_INVESTIGATIONFORM_ISCOVID19WORKINGCASEDEFINITIONMET:
+            task.lebs?.investigationForm?.isCovid19WorkingCaseDefinitionMet,
+        LEBS_INVESTIGATIONFORM_ISEVENTSETTINGPROMOTINGSPREAD:
+            task.lebs?.investigationForm?.isEventSettingPromotingSpread,
+        LEBS_INVESTIGATIONFORM_MEASUREHANDHYGIENE:
+            task.lebs?.investigationForm?.measureHandHygiene,
+        LEBS_INVESTIGATIONFORM_MEASURETEMPSCREENING:
+            task.lebs?.investigationForm?.measureTempScreening,
+        LEBS_INVESTIGATIONFORM_MEASUREPHYSICALDISTANCING:
+            task.lebs?.investigationForm?.measurePhysicalDistancing,
+        LEBS_INVESTIGATIONFORM_MEASURESOCIALDISTANCING:
+            task.lebs?.investigationForm?.measureSocialDistancing,
+        LEBS_INVESTIGATIONFORM_MEASUREUSEOFMASKS:
+            task.lebs?.investigationForm?.measureUseOfMasks,
+        LEBS_INVESTIGATIONFORM_MEASUREVENTILATION:
+            task.lebs?.investigationForm?.measureVentilation,
+        LEBS_INVESTIGATIONFORM_SYMPTOMS:
+            task.lebs?.investigationForm?.symptoms.join(';'),
+        LEBS_INVESTIGATIONFORM_SYMPTOMSOTHER:
+            task.lebs?.investigationForm?.symptomsOther,
+        LEBS_INVESTIGATIONFORM_ISSAMPLESCOLLECTED:
+            task.lebs?.investigationForm?.isSamplesCollected,
+        LEBS_INVESTIGATIONFORM_LABRESULTS:
+            task.lebs?.investigationForm?.labResults,
+        LEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION:
+            task.lebs?.investigationForm?.additionalInformation,
+        LEBS_INVESTIGATIONFORM_RISKCLASSIFICATION:
+            task.lebs?.investigationForm?.riskClassification,
+        LEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS:
+            task.lebs?.investigationForm?.isEventInfectious,
+        LEBS_INVESTIGATIONFORM_EVENTCATEGORIES:
+            task.lebs?.investigationForm?.eventCategories.join(';'),
+        LEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT:
+            task.lebs?.investigationForm?.systemsAffectedByEvent.join(';'),
+        LEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES:
+            task.lebs?.investigationForm?.responseActivities.join(';'),
+        LEBS_INVESTIGATIONFORM_VIA: task.lebs?.investigationForm?.via,
+        LEBS_INVESTIGATIONFORM_SPOT: task.lebs?.investigationForm?.spot,
+        LEBS_INVESTIGATIONFORM_CREATEDAT:
+            task.lebs?.investigationForm?.createdAt,
+        LEBS_INVESTIGATIONFORM_UPDATEDAT:
+            task.lebs?.investigationForm?.updatedAt,
+        LEBS_RESPONSEFORM_ID: task.lebs?.responseForm?._id,
+        LEBS_RESPONSEFORM_USER: task.lebs?.responseForm?.user._id,
+        LEBS_RESPONSEFORM_DATESCMOHINFORMED:
+            task.lebs?.responseForm?.dateSCMOHInformed,
+        LEBS_RESPONSEFORM_DATERESPONSESTARTED:
+            task.lebs?.responseForm?.dateResponseStarted,
+        LEBS_RESPONSEFORM_DATESAMPLESCOLLECTED:
+            task.lebs?.responseForm?.dateSamplesCollected,
+        LEBS_RESPONSEFORM_DATEOFTESTRESULTS:
+            task.lebs?.responseForm?.dateOfTestResults,
+        LEBS_RESPONSEFORM_ISCOVID19WORKINGCASEDEFINITIONMET:
+            task.lebs?.responseForm?.isCovid19WorkingCaseDefinitionMet,
+        LEBS_RESPONSEFORM_ISCIFFILLEDANDSAMPLESCOLLECTED:
+            task.lebs?.responseForm?.isCIFFilledAndSamplesCollected,
+        LEBS_RESPONSEFORM_REASONSNOSAMPLECOLLECTEDOTHER:
+            task.lebs?.responseForm?.reasonsNoSampleCollectedOther,
+        LEBS_RESPONSEFORM_REASONSNOSAMPLECOLLECTED:
+            task.lebs?.responseForm?.reasonsNoSampleCollected.join(';'),
+        LEBS_RESPONSEFORM_RESPONSEACTIVITIES:
+            task.lebs?.responseForm?.responseActivities.join(';'),
+        LEBS_RESPONSEFORM_RESPONSEACTIVITIESOTHER:
+            task.lebs?.responseForm?.responseActivitiesOther,
+        LEBS_RESPONSEFORM_ADDITIONALRESPONSEACTIVITIES:
+            task.lebs?.responseForm?.additionalResponseActivities.join(';'),
+        LEBS_RESPONSEFORM_ISHUMANSQUARANTINEDFOLLOWEDUP:
+            task.lebs?.responseForm?.isHumansQuarantinedFollowedUp,
+        LEBS_RESPONSEFORM_EVENTSTATUSES:
+            task.lebs?.responseForm?.eventStatuses.join(';'),
+        LEBS_RESPONSEFORM_EVENTSTATUS: task.lebs?.responseForm?.eventStatus,
+
+        LEBS_RESPONSEFORM_HUMANSQUARANTINEDSELF:
+            task.lebs?.responseForm?.humansQuarantinedSelf,
+        LEBS_RESPONSEFORM_HUMANSQUARANTINEDSCHOOL:
+            task.lebs?.responseForm?.humansQuarantinedSchool,
+        LEBS_RESPONSEFORM_HUMANSQUARANTINEDINSTITUTIONAL:
+            task.lebs?.responseForm?.humansQuarantinedInstitutional,
+        LEBS_RESPONSEFORM_HUMANSISOLATIONSCHOOL:
+            task.lebs?.responseForm?.humansIsolationSchool,
+        LEBS_RESPONSEFORM_HUMANSISOLATIONHEALTHFACILITY:
+            task.lebs?.responseForm?.humansIsolationHealthFacility,
+        LEBS_RESPONSEFORM_HUMANSISOLATIONHOME:
+            task.lebs?.responseForm?.humansIsolationHome,
+        LEBS_RESPONSEFORM_HUMANSISOLATIONINSTITUTIONAL:
+            task.lebs?.responseForm?.humansIsolationInstitutional,
+        LEBS_RESPONSEFORM_HUMANSDEAD: task.lebs?.responseForm?.humansDead,
+        LEBS_RESPONSEFORM_HUMANSPOSITIVE:
+            task.lebs?.responseForm?.humansPositive,
+        LEBS_RESPONSEFORM_HUMANSTESTED: task.lebs?.responseForm?.humansTested,
+        LEBS_RESPONSEFORM_HUMANSCASES: task.lebs?.responseForm?.humansCases,
+        LEBS_RESPONSEFORM_HUMANSQUARANTINED:
+            task.lebs?.responseForm?.humansQuarantined,
+        LEBS_RESPONSEFORM_QUARANTINETYPES:
+            task.lebs?.responseForm?.quarantineTypes.join(';'),
+        LEBS_RESPONSEFORM_ISHUMANSISOLATED:
+            task.lebs?.responseForm?.isHumansIsolated,
+        LEBS_RESPONSEFORM_ISOLATIONTYPES:
+            task.lebs?.responseForm?.isolationTypes.join(';'),
+        LEBS_RESPONSEFORM_ADDITIONALINFORMATION:
+            task.lebs?.responseForm?.additionalInformation,
+        LEBS_RESPONSEFORM_VIA: task.lebs?.responseForm?.via,
+        LEBS_RESPONSEFORM_SPOT: task.lebs?.responseForm?.spot,
+        LEBS_RESPONSEFORM_CREATEDAT: task.lebs?.responseForm?.createdAt,
+        LEBS_RESPONSEFORM_UPDATEDAT: task.lebs?.responseForm?.updatedAt,
+        LEBS_SUMMARYFORM_ID: task.lebs?.summaryForm?._id,
+        LEBS_SUMMARYFORM_USER: task.lebs?.summaryForm?.user._id,
+        LEBS_SUMMARYFORM_EVENTSTATUS: task.lebs?.summaryForm?.eventStatus,
+        LEBS_SUMMARYFORM_ESCALATEDTO: task.lebs?.summaryForm?.escalatedTo,
+        LEBS_SUMMARYFORM_CAUSE: task.lebs?.summaryForm?.cause,
+        LEBS_SUMMARYFORM_VIA: task.lebs?.summaryForm?.via,
+        LEBS_SUMMARYFORM_SPOT: task.lebs?.summaryForm?.spot,
+        LEBS_SUMMARYFORM_CREATEDAT: task.lebs?.summaryForm?.createdAt,
+        LEBS_SUMMARYFORM_UPDATEDAT: task.lebs?.summaryForm?.updatedAt,
+        LEBS_ESCALATIONFORM_ID: task.lebs?.escalationForm?._id,
+        LEBS_ESCALATIONFORM_USER: task.lebs?.escalationForm?.user._id,
+        LEBS_ESCALATIONFORM_EVENTTYPE: task.lebs?.escalationForm?.eventType,
+        LEBS_ESCALATIONFORM_DATERESPONSESTARTED:
+            task.lebs?.escalationForm?.dateResponseStarted,
+        LEBS_ESCALATIONFORM_REASON: task.lebs?.escalationForm?.reason,
+        LEBS_ESCALATIONFORM_REASONOTHER: task.lebs?.escalationForm?.reasonOther,
+        LEBS_ESCALATIONFORM_DATEESCALATED:
+            task.lebs?.escalationForm?.dateEscalated,
+        LEBS_ESCALATIONFORM_VIA: task.lebs?.escalationForm?.via,
+        LEBS_ESCALATIONFORM_CREATEDAT: task.lebs?.escalationForm?.createdAt,
+        LEBS_ESCALATIONFORM_UPDATEDAT: task.lebs?.escalationForm?.updatedAt
     };
 }
