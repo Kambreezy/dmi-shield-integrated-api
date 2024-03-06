@@ -1,3 +1,4 @@
+import DocumentEbs, { DocEbsInput, DocumentEbsAttributes } from '../models/DocumentEBS';
 import Document503, { Doc503Input, Doc503Output } from '../models/Document503';
 import DocumentSari, {
     DocSariInput,
@@ -17,6 +18,10 @@ class DocumentRepository implements IDocumentRepository {
 
     createSariDocument(payload: DocSariInput): Promise<DocSariOutput> {
         return DocumentSari.create(payload);
+    }
+
+    createEbsDocument(payload: DocEbsInput): Promise<DocumentEbsAttributes> {
+        return DocumentEbs.create(payload);
     }
 }
 

@@ -19,12 +19,29 @@
             "allow": ["admin"],
             "methods": ["GET", "POST"],
             "type": "http"
+        },
+
+        {
+            "name": "EBS Mediator",
+            "urlPattern": "^/api/v1/ebs$",
+            "routes": [
+                {
+                    "name": "EBS Mediator Route",
+                    "host": "host.docker.internal",
+                    "port": "3000",
+                    "primary": true,
+                    "type": "http"
+                }
+            ],
+            "allow": ["admin"],
+            "methods": ["GET"],
+            "type": "http"
         }
     ],
     "endpoints": [
         {
             "name": "MSSQL Mediator Endpoint",
-            "host": "localhost",
+            "host": "host.docker.internal",
             "port": "3000",
             "primary": true,
             "type": "http"

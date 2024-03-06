@@ -25,13 +25,13 @@
         "project"
     ],
     "author": {
-        "name": "",
-        "email": "",
-        "url": ""
+        "name": "Kariuki, Brian",
+        "email": "bk2936@cumc.columbia.edu",
+        "url": "https://github.com/CENTERS-FOR-INTERNATIONAL-PROGRAMS/dmi-shield-portal-api"
     },
     "license": "ISC",
     "bugs": {
-        "url": ""
+        "url": "https://github.com/CENTERS-FOR-INTERNATIONAL-PROGRAMS/dmi-shield-portal-api"
     },
     "homepage": "",
     "dependencies": {
@@ -45,11 +45,14 @@
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "express-validator": "^6.14.2",
+        "install": "^0.13.0",
         "jsonwebtoken": "^8.5.1",
         "morgan": "^1.10.0",
         "multer": "^1.4.5-lts.1",
         "mysql2": "^3.6.5",
+        "node-fetch": "^2.7.0",
         "nodemailer": "^6.9.7",
+        "npm": "^10.5.0",
         "openhim-mediator-utils": "^0.2.3",
         "pg": "^8.7.1",
         "pg-hstore": "^2.3.4",
@@ -73,6 +76,7 @@
         "@types/morgan": "^1.9.3",
         "@types/multer": "^1.4.11",
         "@types/node": "^16.18.66",
+        "@types/node-fetch": "^2.6.11",
         "@types/sequelize": "^4.28.10",
         "@types/streamifier": "^0.1.2",
         "@types/swagger-jsdoc": "^6.0.1",
