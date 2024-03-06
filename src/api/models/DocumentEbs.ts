@@ -6,6 +6,7 @@ export interface DocumentEbsAttributes {
     _ID: string;
     _STATUS: string;
     UNIT_ID: string;
+    UNIT_NAME: string;
     UNIT_CREATEDAT: Date;
     UNIT_UPDATEDAT: Date;
     UNIT_CODE: string;
@@ -21,6 +22,7 @@ export interface DocumentEbsAttributes {
     UNIT_DATELASTREPORTED_CREATEDAT: Date;
 
     UNIT_PARENT_ID: string;
+    UNIT_PARENT_NAME: string;
     UNIT_PARENT_CREATEDAT: Date;
     UNIT_PARENT_UPDATEDAT: Date;
     UNIT_PARENT_CODE: string;
@@ -35,6 +37,24 @@ export interface DocumentEbsAttributes {
     UNIT_PARENT_DATELASTREPORTED_LIVE: Date;
     UNIT_PARENT_DATELASTREPORTED_UPDATEDAT: Date;
     UNIT_PARENT_DATELASTREPORTED_CREATEDAT: Date;
+
+
+    UNIT_PARENT_PARENT_ID: string;
+    UNIT_PARENT_PARENT_NAME: string;
+    UNIT_PARENT_PARENT_CREATEDAT: Date;
+    UNIT_PARENT_PARENT_UPDATEDAT: Date;
+    UNIT_PARENT_PARENT_CODE: string;
+    UNIT_PARENT_PARENT_UID: string;
+    UNIT_PARENT_PARENT_PARENT: string;
+    UNIT_PARENT_PARENT_STATE: string;
+    UNIT_PARENT_PARENT_TYPE: string;
+    UNIT_PARENT_PARENT_SUGGESTIONS: string;
+    UNIT_PARENT_PARENT_UNITS: string;
+    UNIT_PARENT_PARENT_DATELASTREPORTED_ID: string;
+    UNIT_PARENT_PARENT_DATELASTREPORTED_TEST: Date;
+    UNIT_PARENT_PARENT_DATELASTREPORTED_LIVE: Date;
+    UNIT_PARENT_PARENT_DATELASTREPORTED_UPDATEDAT: Date;
+    UNIT_PARENT_PARENT_DATELASTREPORTED_CREATEDAT: Date;
 
     USER_ID: string;
     USER_CREATEDAT: Date;
@@ -139,6 +159,193 @@ export interface DocumentEbsAttributes {
     CEBS_ESCALATIONFORM_CREATEDAT: Date;
     CEBS_ESCALATIONFORM_UPDATEDAT: Date;
 
+
+    HEBS_ID: string;
+    HEBS_CREATEDAT: Date;
+    HEBS_UPDATEDAT: Date;
+
+    HEBS_VERIFICATIONFORM_ID: string;
+    HEBS_VERIFICATIONFORM_USER: string;
+    HEBS_VERIFICATIONFORM_SOURCE: string;
+    HEBS_VERIFICATIONFORM_DESCRIPTION: string;
+    HEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: string;
+    HEBS_VERIFICATIONFORM_UPDATEDSIGNAL: string;
+    HEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: string;
+    HEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: Date;
+    HEBS_VERIFICATIONFORM_INFORMANT: string;
+    HEBS_VERIFICATIONFORM_OTHERINFORMANT: string;
+    HEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: string;
+    HEBS_VERIFICATIONFORM_DATEVERIFIED: Date;
+    HEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: string;
+    HEBS_VERIFICATIONFORM_THREATTO: string;
+    HEBS_VERIFICATIONFORM_DATESCDSCINFORMED: Date;
+    HEBS_VERIFICATIONFORM_VIA: string;
+    HEBS_VERIFICATIONFORM_SPOT: string;
+    HEBS_VERIFICATIONFORM_CREATEDAT: Date;
+    HEBS_VERIFICATIONFORM_UPDATEDAT: Date;
+
+    HEBS_INVESTIGATIONFORM_ID: string;
+    HEBS_INVESTIGATIONFORM_USER: string;
+    HEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: Date;
+    HEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: Date;
+    HEBS_INVESTIGATIONFORM_SYMPTOMS: string;
+    HEBS_INVESTIGATIONFORM_HUMANCASES: number;
+    HEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: number;
+    HEBS_INVESTIGATIONFORM_HUMANSDEAD: number;
+    HEBS_INVESTIGATIONFORM_ANIMALSCASES: number;
+    HEBS_INVESTIGATIONFORM_ANIMALSDEAD: number;
+    HEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: string;
+    HEBS_INVESTIGATIONFORM_CAUSE: string;
+    HEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: string;
+    HEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: Date;
+    HEBS_INVESTIGATIONFORM_LABRESULTS: string;
+    HEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: Date;
+    HEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: string;
+    HEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: string;
+    HEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: string;
+    HEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: string;
+    HEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: string;
+    HEBS_INVESTIGATIONFORM_EVENTCATEGORIES: string;
+    HEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: string;
+    HEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: string;
+    HEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: Date;
+    HEBS_INVESTIGATIONFORM_VIA: string;
+    HEBS_INVESTIGATIONFORM_SPOT: string;
+    HEBS_INVESTIGATIONFORM_CREATEDAT: Date;
+    HEBS_INVESTIGATIONFORM_UPDATEDAT: Date;
+
+    HEBS_RESPONSEFORM_ID: string;
+    HEBS_RESPONSEFORM_USER: string;
+    HEBS_RESPONSEFORM_EVENTTYPE: string;
+    HEBS_RESPONSEFORM_DATESCMOHINFORMED: Date;
+    HEBS_RESPONSEFORM_DATERESPONSESTARTED: Date;
+    HEBS_RESPONSEFORM_RESPONSEACTIVITIES: string;
+    HEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: string;
+    HEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: string;
+    HEBS_RESPONSEFORM_RECOMMENDATIONS: string;
+    HEBS_RESPONSEFORM_DATEESCALATED: Date;
+    HEBS_RESPONSEFORM_DATEOFREPORT: Date;
+    HEBS_RESPONSEFORM_ADDITIONALINFORMATION: string;
+    HEBS_RESPONSEFORM_VIA: string;
+    HEBS_RESPONSEFORM_SPOT: string;
+    HEBS_RESPONSEFORM_CREATEDAT: Date;
+    HEBS_RESPONSEFORM_UPDATEDAT: Date;
+
+    HEBS_SUMMARYFORM_ID: string;
+    HEBS_SUMMARYFORM_USER: string;
+    HEBS_SUMMARYFORM_EVENTSTATUS: string;
+    HEBS_SUMMARYFORM_ESCALATEDTO: string;
+    HEBS_SUMMARYFORM_CAUSE: string;
+    HEBS_SUMMARYFORM_VIA: string;
+    HEBS_SUMMARYFORM_SPOT: string;
+    HEBS_SUMMARYFORM_CREATEDAT: Date;
+    HEBS_SUMMARYFORM_UPDATEDAT: Date;
+
+    HEBS_ESCALATIONFORM_ID: string;
+    HEBS_ESCALATIONFORM_USER: string;
+    HEBS_ESCALATIONFORM_EVENTTYPE: string;
+    HEBS_ESCALATIONFORM_DATERESPONSESTARTED: Date;
+    HEBS_ESCALATIONFORM_REASON: string;
+    HEBS_ESCALATIONFORM_REASONOTHER: string;
+    HEBS_ESCALATIONFORM_DATEESCALATED: Date;
+    HEBS_ESCALATIONFORM_VIA: string;
+    HEBS_ESCALATIONFORM_CREATEDAT: Date;
+    HEBS_ESCALATIONFORM_UPDATEDAT: Date;
+
+
+
+    VEBS_ID: string;
+    VEBS_CREATEDAT: Date;
+    VEBS_UPDATEDAT: Date;
+
+    VEBS_VERIFICATIONFORM_ID: string;
+    VEBS_VERIFICATIONFORM_USER: string;
+    VEBS_VERIFICATIONFORM_SOURCE: string;
+    VEBS_VERIFICATIONFORM_DESCRIPTION: string;
+    VEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: string;
+    VEBS_VERIFICATIONFORM_UPDATEDSIGNAL: string;
+    VEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: string;
+    VEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: Date;
+    VEBS_VERIFICATIONFORM_INFORMANT: string;
+    VEBS_VERIFICATIONFORM_OTHERINFORMANT: string;
+    VEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: string;
+    VEBS_VERIFICATIONFORM_DATEVERIFIED: Date;
+    VEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: string;
+    VEBS_VERIFICATIONFORM_THREATTO: string;
+    VEBS_VERIFICATIONFORM_DATESCDSCINFORMED: Date;
+    VEBS_VERIFICATIONFORM_VIA: string;
+    VEBS_VERIFICATIONFORM_SPOT: string;
+    VEBS_VERIFICATIONFORM_CREATEDAT: Date;
+    VEBS_VERIFICATIONFORM_UPDATEDAT: Date;
+
+    VEBS_INVESTIGATIONFORM_ID: string;
+    VEBS_INVESTIGATIONFORM_USER: string;
+    VEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: Date;
+    VEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: Date;
+    VEBS_INVESTIGATIONFORM_SYMPTOMS: string;
+    VEBS_INVESTIGATIONFORM_HUMANCASES: number;
+    VEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: number;
+    VEBS_INVESTIGATIONFORM_HUMANSDEAD: number;
+    VEBS_INVESTIGATIONFORM_ANIMALSCASES: number;
+    VEBS_INVESTIGATIONFORM_ANIMALSDEAD: number;
+    VEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: string;
+    VEBS_INVESTIGATIONFORM_CAUSE: string;
+    VEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: string;
+    VEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: Date;
+    VEBS_INVESTIGATIONFORM_LABRESULTS: string;
+    VEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: Date;
+    VEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: string;
+    VEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: string;
+    VEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: string;
+    VEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: string;
+    VEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: string;
+    VEBS_INVESTIGATIONFORM_EVENTCATEGORIES: string;
+    VEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: string;
+    VEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: string;
+    VEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: Date;
+    VEBS_INVESTIGATIONFORM_VIA: string;
+    VEBS_INVESTIGATIONFORM_SPOT: string;
+    VEBS_INVESTIGATIONFORM_CREATEDAT: Date;
+    VEBS_INVESTIGATIONFORM_UPDATEDAT: Date;
+
+    VEBS_RESPONSEFORM_ID: string;
+    VEBS_RESPONSEFORM_USER: string;
+    VEBS_RESPONSEFORM_EVENTTYPE: string;
+    VEBS_RESPONSEFORM_DATESCMOHINFORMED: Date;
+    VEBS_RESPONSEFORM_DATERESPONSESTARTED: Date;
+    VEBS_RESPONSEFORM_RESPONSEACTIVITIES: string;
+    VEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: string;
+    VEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: string;
+    VEBS_RESPONSEFORM_RECOMMENDATIONS: string;
+    VEBS_RESPONSEFORM_DATEESCALATED: Date;
+    VEBS_RESPONSEFORM_DATEOFREPORT: Date;
+    VEBS_RESPONSEFORM_ADDITIONALINFORMATION: string;
+    VEBS_RESPONSEFORM_VIA: string;
+    VEBS_RESPONSEFORM_SPOT: string;
+    VEBS_RESPONSEFORM_CREATEDAT: Date;
+    VEBS_RESPONSEFORM_UPDATEDAT: Date;
+
+    VEBS_SUMMARYFORM_ID: string;
+    VEBS_SUMMARYFORM_USER: string;
+    VEBS_SUMMARYFORM_EVENTSTATUS: string;
+    VEBS_SUMMARYFORM_ESCALATEDTO: string;
+    VEBS_SUMMARYFORM_CAUSE: string;
+    VEBS_SUMMARYFORM_VIA: string;
+    VEBS_SUMMARYFORM_SPOT: string;
+    VEBS_SUMMARYFORM_CREATEDAT: Date;
+    VEBS_SUMMARYFORM_UPDATEDAT: Date;
+
+    VEBS_ESCALATIONFORM_ID: string;
+    VEBS_ESCALATIONFORM_USER: string;
+    VEBS_ESCALATIONFORM_EVENTTYPE: string;
+    VEBS_ESCALATIONFORM_DATERESPONSESTARTED: Date;
+    VEBS_ESCALATIONFORM_REASON: string;
+    VEBS_ESCALATIONFORM_REASONOTHER: string;
+    VEBS_ESCALATIONFORM_DATEESCALATED: Date;
+    VEBS_ESCALATIONFORM_VIA: string;
+    VEBS_ESCALATIONFORM_CREATEDAT: Date;
+    VEBS_ESCALATIONFORM_UPDATEDAT: Date;
+
     id: number;
 }
 
@@ -156,6 +363,7 @@ class DocumentEbs
     public _ID: string;
     public _STATUS: string;
     public UNIT_ID: string;
+    public UNIT_NAME: string;
     public UNIT_CREATEDAT: Date;
     public UNIT_UPDATEDAT: Date;
     public UNIT_CODE: string;
@@ -169,7 +377,9 @@ class DocumentEbs
     public UNIT_DATELASTREPORTED_LIVE: Date;
     public UNIT_DATELASTREPORTED_UPDATEDAT: Date;
     public UNIT_DATELASTREPORTED_CREATEDAT: Date;
+
     public UNIT_PARENT_ID: string;
+    public UNIT_PARENT_NAME: string;
     public UNIT_PARENT_CREATEDAT: Date;
     public UNIT_PARENT_UPDATEDAT: Date;
     public UNIT_PARENT_CODE: string;
@@ -184,6 +394,25 @@ class DocumentEbs
     public UNIT_PARENT_DATELASTREPORTED_LIVE: Date;
     public UNIT_PARENT_DATELASTREPORTED_UPDATEDAT: Date;
     public UNIT_PARENT_DATELASTREPORTED_CREATEDAT: Date;
+
+    public UNIT_PARENT_PARENT_ID: string;
+    public UNIT_PARENT_PARENT_NAME: string;
+    public UNIT_PARENT_PARENT_CREATEDAT: Date;
+    public UNIT_PARENT_PARENT_UPDATEDAT: Date;
+    public UNIT_PARENT_PARENT_CODE: string;
+    public UNIT_PARENT_PARENT_UID: string;
+    public UNIT_PARENT_PARENT_PARENT: string;
+    public UNIT_PARENT_PARENT_STATE: string;
+    public UNIT_PARENT_PARENT_TYPE: string;
+    public UNIT_PARENT_PARENT_SUGGESTIONS: string;
+    public UNIT_PARENT_PARENT_UNITS: string;
+    public UNIT_PARENT_PARENT_DATELASTREPORTED_ID: string;
+    public UNIT_PARENT_PARENT_DATELASTREPORTED_TEST: Date;
+    public UNIT_PARENT_PARENT_DATELASTREPORTED_LIVE: Date;
+    public UNIT_PARENT_PARENT_DATELASTREPORTED_UPDATEDAT: Date;
+    public UNIT_PARENT_PARENT_DATELASTREPORTED_CREATEDAT: Date;
+
+
     public SIGNALID: string;
     public SIGNAL: string;
     public SUGGESTIONS: string;
@@ -275,6 +504,181 @@ class DocumentEbs
     public CEBS_ESCALATIONFORM_CREATEDAT: Date;
     public CEBS_ESCALATIONFORM_UPDATEDAT: Date;
 
+    public HEBS_ID: string;
+    public HEBS_CREATEDAT: Date;
+    public HEBS_UPDATEDAT: Date;
+    public HEBS_VERIFICATIONFORM_ID: string;
+    public HEBS_VERIFICATIONFORM_USER: string;
+    public HEBS_VERIFICATIONFORM_SOURCE: string;
+    public HEBS_VERIFICATIONFORM_DESCRIPTION: string;
+    public HEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: string;
+    public HEBS_VERIFICATIONFORM_UPDATEDSIGNAL: string;
+    public HEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: string;
+    public HEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: Date;
+    public HEBS_VERIFICATIONFORM_INFORMANT: string;
+    public HEBS_VERIFICATIONFORM_OTHERINFORMANT: string;
+    public HEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: string;
+    public HEBS_VERIFICATIONFORM_DATEVERIFIED: Date;
+    public HEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: string;
+    public HEBS_VERIFICATIONFORM_THREATTO: string;
+    public HEBS_VERIFICATIONFORM_DATESCDSCINFORMED: Date;
+    public HEBS_VERIFICATIONFORM_VIA: string;
+    public HEBS_VERIFICATIONFORM_SPOT: string;
+    public HEBS_VERIFICATIONFORM_CREATEDAT: Date;
+    public HEBS_VERIFICATIONFORM_UPDATEDAT: Date;
+    public HEBS_INVESTIGATIONFORM_ID: string;
+    public HEBS_INVESTIGATIONFORM_USER: string;
+    public HEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: Date;
+    public HEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: Date;
+    public HEBS_INVESTIGATIONFORM_SYMPTOMS: string;
+    public HEBS_INVESTIGATIONFORM_HUMANCASES: number;
+    public HEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: number;
+    public HEBS_INVESTIGATIONFORM_HUMANSDEAD: number;
+    public HEBS_INVESTIGATIONFORM_ANIMALSCASES: number;
+    public HEBS_INVESTIGATIONFORM_ANIMALSDEAD: number;
+    public HEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: string;
+    public HEBS_INVESTIGATIONFORM_CAUSE: string;
+    public HEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: string;
+    public HEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: Date;
+    public HEBS_INVESTIGATIONFORM_LABRESULTS: string;
+    public HEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: Date;
+    public HEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: string;
+    public HEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: string;
+    public HEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: string;
+    public HEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: string;
+    public HEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: string;
+    public HEBS_INVESTIGATIONFORM_EVENTCATEGORIES: string;
+    public HEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: string;
+    public HEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: string;
+    public HEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: Date;
+    public HEBS_INVESTIGATIONFORM_VIA: string;
+    public HEBS_INVESTIGATIONFORM_SPOT: string;
+    public HEBS_INVESTIGATIONFORM_CREATEDAT: Date;
+    public HEBS_INVESTIGATIONFORM_UPDATEDAT: Date;
+    public HEBS_RESPONSEFORM_ID: string;
+    public HEBS_RESPONSEFORM_USER: string;
+    public HEBS_RESPONSEFORM_EVENTTYPE: string;
+    public HEBS_RESPONSEFORM_DATESCMOHINFORMED: Date;
+    public HEBS_RESPONSEFORM_DATERESPONSESTARTED: Date;
+    public HEBS_RESPONSEFORM_RESPONSEACTIVITIES: string;
+    public HEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: string;
+    public HEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: string;
+    public HEBS_RESPONSEFORM_RECOMMENDATIONS: string;
+    public HEBS_RESPONSEFORM_DATEESCALATED: Date;
+    public HEBS_RESPONSEFORM_DATEOFREPORT: Date;
+    public HEBS_RESPONSEFORM_ADDITIONALINFORMATION: string;
+    public HEBS_RESPONSEFORM_VIA: string;
+    public HEBS_RESPONSEFORM_SPOT: string;
+    public HEBS_RESPONSEFORM_CREATEDAT: Date;
+    public HEBS_RESPONSEFORM_UPDATEDAT: Date;
+    public HEBS_SUMMARYFORM_ID: string;
+    public HEBS_SUMMARYFORM_USER: string;
+    public HEBS_SUMMARYFORM_EVENTSTATUS: string;
+    public HEBS_SUMMARYFORM_ESCALATEDTO: string;
+    public HEBS_SUMMARYFORM_CAUSE: string;
+    public HEBS_SUMMARYFORM_VIA: string;
+    public HEBS_SUMMARYFORM_SPOT: string;
+    public HEBS_SUMMARYFORM_CREATEDAT: Date;
+    public HEBS_SUMMARYFORM_UPDATEDAT: Date;
+    public HEBS_ESCALATIONFORM_ID: string;
+    public HEBS_ESCALATIONFORM_USER: string;
+    public HEBS_ESCALATIONFORM_EVENTTYPE: string;
+    public HEBS_ESCALATIONFORM_DATERESPONSESTARTED: Date;
+    public HEBS_ESCALATIONFORM_REASON: string;
+    public HEBS_ESCALATIONFORM_REASONOTHER: string;
+    public HEBS_ESCALATIONFORM_DATEESCALATED: Date;
+    public HEBS_ESCALATIONFORM_VIA: string;
+    public HEBS_ESCALATIONFORM_CREATEDAT: Date;
+    public HEBS_ESCALATIONFORM_UPDATEDAT: Date;
+
+
+    public VEBS_ID: string;
+    public VEBS_CREATEDAT: Date;
+    public VEBS_UPDATEDAT: Date;
+    public VEBS_VERIFICATIONFORM_ID: string;
+    public VEBS_VERIFICATIONFORM_USER: string;
+    public VEBS_VERIFICATIONFORM_SOURCE: string;
+    public VEBS_VERIFICATIONFORM_DESCRIPTION: string;
+    public VEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: string;
+    public VEBS_VERIFICATIONFORM_UPDATEDSIGNAL: string;
+    public VEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: string;
+    public VEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: Date;
+    public VEBS_VERIFICATIONFORM_INFORMANT: string;
+    public VEBS_VERIFICATIONFORM_OTHERINFORMANT: string;
+    public VEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: string;
+    public VEBS_VERIFICATIONFORM_DATEVERIFIED: Date;
+    public VEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: string;
+    public VEBS_VERIFICATIONFORM_THREATTO: string;
+    public VEBS_VERIFICATIONFORM_DATESCDSCINFORMED: Date;
+    public VEBS_VERIFICATIONFORM_VIA: string;
+    public VEBS_VERIFICATIONFORM_SPOT: string;
+    public VEBS_VERIFICATIONFORM_CREATEDAT: Date;
+    public VEBS_VERIFICATIONFORM_UPDATEDAT: Date;
+    public VEBS_INVESTIGATIONFORM_ID: string;
+    public VEBS_INVESTIGATIONFORM_USER: string;
+    public VEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: Date;
+    public VEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: Date;
+    public VEBS_INVESTIGATIONFORM_SYMPTOMS: string;
+    public VEBS_INVESTIGATIONFORM_HUMANCASES: number;
+    public VEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: number;
+    public VEBS_INVESTIGATIONFORM_HUMANSDEAD: number;
+    public VEBS_INVESTIGATIONFORM_ANIMALSCASES: number;
+    public VEBS_INVESTIGATIONFORM_ANIMALSDEAD: number;
+    public VEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: string;
+    public VEBS_INVESTIGATIONFORM_CAUSE: string;
+    public VEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: string;
+    public VEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: Date;
+    public VEBS_INVESTIGATIONFORM_LABRESULTS: string;
+    public VEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: Date;
+    public VEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: string;
+    public VEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: string;
+    public VEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: string;
+    public VEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: string;
+    public VEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: string;
+    public VEBS_INVESTIGATIONFORM_EVENTCATEGORIES: string;
+    public VEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: string;
+    public VEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: string;
+    public VEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: Date;
+    public VEBS_INVESTIGATIONFORM_VIA: string;
+    public VEBS_INVESTIGATIONFORM_SPOT: string;
+    public VEBS_INVESTIGATIONFORM_CREATEDAT: Date;
+    public VEBS_INVESTIGATIONFORM_UPDATEDAT: Date;
+    public VEBS_RESPONSEFORM_ID: string;
+    public VEBS_RESPONSEFORM_USER: string;
+    public VEBS_RESPONSEFORM_EVENTTYPE: string;
+    public VEBS_RESPONSEFORM_DATESCMOHINFORMED: Date;
+    public VEBS_RESPONSEFORM_DATERESPONSESTARTED: Date;
+    public VEBS_RESPONSEFORM_RESPONSEACTIVITIES: string;
+    public VEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: string;
+    public VEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: string;
+    public VEBS_RESPONSEFORM_RECOMMENDATIONS: string;
+    public VEBS_RESPONSEFORM_DATEESCALATED: Date;
+    public VEBS_RESPONSEFORM_DATEOFREPORT: Date;
+    public VEBS_RESPONSEFORM_ADDITIONALINFORMATION: string;
+    public VEBS_RESPONSEFORM_VIA: string;
+    public VEBS_RESPONSEFORM_SPOT: string;
+    public VEBS_RESPONSEFORM_CREATEDAT: Date;
+    public VEBS_RESPONSEFORM_UPDATEDAT: Date;
+    public VEBS_SUMMARYFORM_ID: string;
+    public VEBS_SUMMARYFORM_USER: string;
+    public VEBS_SUMMARYFORM_EVENTSTATUS: string;
+    public VEBS_SUMMARYFORM_ESCALATEDTO: string;
+    public VEBS_SUMMARYFORM_CAUSE: string;
+    public VEBS_SUMMARYFORM_VIA: string;
+    public VEBS_SUMMARYFORM_SPOT: string;
+    public VEBS_SUMMARYFORM_CREATEDAT: Date;
+    public VEBS_SUMMARYFORM_UPDATEDAT: Date;
+    public VEBS_ESCALATIONFORM_ID: string;
+    public VEBS_ESCALATIONFORM_USER: string;
+    public VEBS_ESCALATIONFORM_EVENTTYPE: string;
+    public VEBS_ESCALATIONFORM_DATERESPONSESTARTED: Date;
+    public VEBS_ESCALATIONFORM_REASON: string;
+    public VEBS_ESCALATIONFORM_REASONOTHER: string;
+    public VEBS_ESCALATIONFORM_DATEESCALATED: Date;
+    public VEBS_ESCALATIONFORM_VIA: string;
+    public VEBS_ESCALATIONFORM_CREATEDAT: Date;
+    public VEBS_ESCALATIONFORM_UPDATEDAT: Date;
+
     public id: number;
 }
 
@@ -290,6 +694,10 @@ DocumentEbs.init(
             allowNull: false
         },
         UNIT_ID: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        UNIT_NAME: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -346,6 +754,10 @@ DocumentEbs.init(
             allowNull: true
         },
         UNIT_PARENT_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_NAME: {
             type: DataTypes.STRING,
             allowNull: true
         },
@@ -406,21 +818,84 @@ DocumentEbs.init(
             allowNull: true
         },
 
+
+        UNIT_PARENT_PARENT_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_NAME: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_CODE: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_UID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_PARENT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_STATE: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_TYPE: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_SUGGESTIONS: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_UNITS: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_DATELASTREPORTED_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_DATELASTREPORTED_TEST: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_DATELASTREPORTED_LIVE: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_DATELASTREPORTED_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        UNIT_PARENT_PARENT_DATELASTREPORTED_CREATEDAT: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+
         USER_ID: {
             type: DataTypes.STRING,
             allowNull: false
         },
-
         USER_CREATEDAT: {
             type: DataTypes.DATE,
             allowNull: false
         },
-
         USER_UPDATEDAT: {
             type: DataTypes.DATE,
             allowNull: false
         },
-
         USER_STATUS: {
             type: DataTypes.STRING,
             allowNull: false 
@@ -787,6 +1262,703 @@ DocumentEbs.init(
             type: DataTypes.DATE,
             allowNull: true 
         },
+
+
+
+        HEBS_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        HEBS_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        HEBS_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        HEBS_VERIFICATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_SOURCE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_DESCRIPTION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_UPDATEDSIGNAL: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_INFORMANT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_OTHERINFORMANT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_DATEVERIFIED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_THREATTO: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_DATESCDSCINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_VERIFICATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_SYMPTOMS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_HUMANCASES: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_HUMANSDEAD: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ANIMALSCASES: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ANIMALSDEAD: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_CAUSE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_LABRESULTS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_EVENTCATEGORIES: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_INVESTIGATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_EVENTTYPE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_DATESCMOHINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_DATERESPONSESTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_RESPONSEACTIVITIES: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_RECOMMENDATIONS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_DATEESCALATED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_DATEOFREPORT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_RESPONSEFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_EVENTSTATUS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_ESCALATEDTO: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_CAUSE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_SUMMARYFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_EVENTTYPE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_DATERESPONSESTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_REASON: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_REASONOTHER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_DATEESCALATED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        HEBS_ESCALATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+
+
+
+
+        VEBS_ID: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        VEBS_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        VEBS_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        VEBS_VERIFICATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_SOURCE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_DESCRIPTION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_ISMATCHINGSIGNAL: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_UPDATEDSIGNAL: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_ISREPORTEDBEFORE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_DATEHEALTHTHREATSTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_INFORMANT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_OTHERINFORMANT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_DATEVERIFIED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_ISTHREATSTILLEXISTING: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_THREATTO: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_DATESCDSCINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_VERIFICATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_DATESCDSCINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_DATEEVENTSTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_SYMPTOMS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_HUMANCASES: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_HUMANCASESHOSPITALIZED: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_HUMANSDEAD: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ANIMALSCASES: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ANIMALSDEAD: {
+            type: DataTypes.INTEGER,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ISCAUSEKNOWN: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_CAUSE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ISLABSAMPLESCOLLECTED: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_DATESAMPLECOLLECTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_LABRESULTS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_DATELABRESULTSRECEIVED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMINITIALAREA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ISNEWCASEDREPORTEDFROMNEWAREAS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_RISKCLASSIFICATION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_ISEVENTINFECTIOUS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_EVENTCATEGORIES: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_SYSTEMSAFFECTEDBYEVENT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_RESPONSEACTIVITIES: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_DATESCMOHINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_INVESTIGATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_EVENTTYPE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_DATESCMOHINFORMED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_DATERESPONSESTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_RESPONSEACTIVITIES: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_OTHERRESPONSEACTIVITY: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_OUTCOMEOFRESPONSE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_RECOMMENDATIONS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_DATEESCALATED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_DATEOFREPORT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_ADDITIONALINFORMATION: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_RESPONSEFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_EVENTSTATUS: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_ESCALATEDTO: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_CAUSE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_SPOT: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_SUMMARYFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_ID: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_USER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_EVENTTYPE: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_DATERESPONSESTARTED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_REASON: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_REASONOTHER: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_DATEESCALATED: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_VIA: {
+            type: DataTypes.STRING,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_CREATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+        VEBS_ESCALATIONFORM_UPDATEDAT: {
+            type: DataTypes.DATE,
+            allowNull: true 
+        },
+
+
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,

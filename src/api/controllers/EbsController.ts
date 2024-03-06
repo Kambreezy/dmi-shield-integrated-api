@@ -29,6 +29,8 @@ class EbsController {
             const taskPage = data['taskPage'] as TaskPage;
             const page = taskPage.page;
             const pages = taskPage.pages;
+            let successCount = 0;
+            let errorCount = 0;
 
             if (taskPage.docs.length > 0) {
                 for (let index = 0; index < taskPage.docs.length; index++) {
@@ -36,11 +38,10 @@ class EbsController {
                     const ebsDoc = formatTask(doc);
 
                     try {
-                        const data = await DocumentService.createEbsDocument(
-                            ebsDoc
-                        );
-                        console.log(data);
+                        await DocumentService.createEbsDocument(ebsDoc);
+                        successCount += 1;
                     } catch (error) {
+                        errorCount += 1;
                         console.log(error);
                     }
                 }
@@ -49,7 +50,11 @@ class EbsController {
             res.status(200).send({
                 message: 'Fetched EBS Data succesfully',
                 data: {
-                    processed_docs: taskPage.docs.length
+                    docs: {
+                        total: taskPage.docs.length,
+                        success: successCount,
+                        error: errorCount
+                    }
                 },
                 success: true
             });
