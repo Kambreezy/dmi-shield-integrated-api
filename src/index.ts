@@ -11,7 +11,7 @@ import AppConfig from './config/appConfig';
 const PORT = AppConfig.app.port;
 const openhimConfig = {
     username: 'root@openhim.org',
-    password: 'openhimlocal',
+    password: 'Shi3lDOpenHim42',
     // apiURL: 'https://openhim-core:8080',
     apiURL: 'https://localhost:8080',
     trustSelfSigned: true,
