@@ -1,3 +1,6 @@
+import DocumentMdharura, {
+    DocumentMdharuraInput,
+} from '../models/DocumentMdharura';
 import Document503, { Doc503Input, Doc503Output } from '../models/Document503';
 import DocumentSari, {
     DocSariInput,
@@ -17,6 +20,10 @@ class DocumentRepository implements IDocumentRepository {
 
     createSariDocument(payload: DocSariInput): Promise<DocSariOutput> {
         return DocumentSari.create(payload);
+    }
+
+    createMdharuraDocument(payload: DocumentMdharuraInput): Promise<[DocumentMdharura, boolean]> {
+        return DocumentMdharura.upsert(payload, { conflictFields: ['_ID'] });
     }
 }
 
