@@ -2579,7 +2579,7 @@ DocumentMdharura.init(
         }
     },
     {
-        tableName: 'central-raw-ebs-linelist',
+        tableName: 'central-raw-ebs-mdharura-linelist',
         freezeTableName: true,
         timestamps: true,
         paranoid: true,
