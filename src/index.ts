@@ -11,9 +11,9 @@ import AppConfig from './config/appConfig';
 const PORT = AppConfig.app.port;
 const openhimConfig = {
     username: 'root@openhim.org',
-    password: 'password',
-    apiURL: 'https://openhim-core:8080',
-    // apiURL: 'https://localhost:8080',
+    password: 'openhimlocal',
+    // apiURL: 'https://openhim-core:8080',
+    apiURL: 'https://localhost:8080',
     trustSelfSigned: true,
     urn
 };
@@ -24,6 +24,8 @@ export function setUpMediator(): void {
         mediatorConfig,
         (err: Error | null) => {
             if (err) {
+
+                console.log(err)
                 throw new Error(
                     `Failed to register mediator. Check your Config. ${err}`
                 );

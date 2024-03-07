@@ -1,56 +1,57 @@
 {
-    "urn": "urn:mediator:tutorial_mssql",
+    "urn": "urn:mediator:shield",
     "version": "1.0.0",
-    "name": "MSSQL Mediator",
-    "description": "MSSQL Mediator",
+    "name": "SHIELD Mediator",
+    "description": "A mediator that pulls data from different health systems.",
     "defaultChannelConfig": [
         {
-            "name": "MSSQL Mediator",
+            "name": "Documents Upload Channel",
             "urlPattern": "^/api/v1/documents$",
+            "description": "This channel processes documents and files uploaded to SHIELD",
             "routes": [
                 {
-                    "name": "MSSQL Mediator Route",
-                    "host": "cholera",
+                    "name": "Upload Route",
+                    "host": "host.docker.internal",
                     "port": "3000",
+                    "path": "/api/v1/documents/",
                     "primary": true,
-                    "type": "http"
+                    "type": "http",
+                    "forwardAuthHeader": true
                 }
             ],
             "allow": ["admin"],
-            "methods": ["GET", "POST"],
-            "type": "http"
+            "methods": ["GET", "POST", "OPTIONS"],
+            "type": "http",
+            "authType": "public"
+        },
+        {
+            "name": "mDharura Channel",
+            "urlPattern": "^/api/v1/ebs/mdharura$",
+            "description": "This pulls data from mDharura and adds it to SHIELD repository.",
+            "routes": [
+                {
+                    "name": "mDharura Route",
+                    "host": "host.docker.internal",
+                    "port": "3000",
+                    "path": "/api/v1/ebs/mdharura/",
+                    "primary": true,
+                    "type": "http",
+                    "forwardAuthHeader": true
+                }
+            ],
+            "allow": ["admin"],
+            "type": "polling",
+            "pollingSchedule": "* 10 * * *",
+            "status": "enabled"
         }
     ],
     "endpoints": [
         {
-            "name": "MSSQL Mediator Endpoint",
-            "host": "localhost",
+            "name": "SHIELD API Endpoint",
+            "host": "host.docker.internal",
             "port": "3000",
             "primary": true,
             "type": "http"
-        }
-    ],
-    "configDefs": [
-        {
-            "param": "tutorial",
-            "displayName": "Tutorial variables",
-            "description": "Some variables to demonstrate fetching OpenHIM mediator config",
-            "type": "struct",
-            "array": false,
-            "template": [
-                {
-                    "param": "variable_1",
-                    "displayName": "Variable 1",
-                    "description": "First Variable",
-                    "type": "string"
-                },
-                {
-                    "param": "variable_2",
-                    "displayName": "Variable 2",
-                    "description": "Second Variable",
-                    "type": "string"
-                }
-            ]
         }
     ]
 }

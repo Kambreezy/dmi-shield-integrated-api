@@ -23,6 +23,8 @@ class EmailService implements IEmailService {
 
     public send2Fa(userEmail: string): void {
         try {
+
+            console.log('Email sending');
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
