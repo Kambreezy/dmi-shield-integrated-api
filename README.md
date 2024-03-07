@@ -98,14 +98,14 @@ Before installation, make sure you have the following prerequisites
 
 1. Clone the repo
     ```sh
-    git clone git@github.com:CENTERS-FOR-INTERNATIONAL-PROGRAMS/dmi-shield-portal-api.git
+    git clone git@github.com:CENTERS-FOR-INTERNATIONAL-PROGRAMS/dmi-shield-integrated-api.git
     ```
 2. Install NPM packages
     ```sh
     npm ci
     ```
 3. Create `.env` file in main directory
-4. Copy and customize envs from `.env.example`
+4. Copy and customize envs from `.env.copy`
 5. Test and build the project
     ```sh
     npm run build

@@ -7,3 +7,4 @@ coverage
 .idea
 **/.idea
 package-lock.json
+mediator.old.json
