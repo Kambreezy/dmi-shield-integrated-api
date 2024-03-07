@@ -2,7 +2,7 @@ import { slugify } from '../../utils/helpers';
 import { Doc503Input, Doc503Output } from '../models/Document503';
 import DocumentRepository from '../repositories/DocumentRepository';
 import { DocSariInput, DocSariOutput } from '../models/DocumentSari';
-import DocumentEbs, { DocEbsInput, DocumentEbsAttributes } from '../models/DocumentEBS';
+import DocumentMdharura, { DocumentMdharuraInput } from '../models/DocumentMdharura';
 
 interface IDocumentService {
     createDocument(payload: Doc503Input): Promise<Doc503Output>;
@@ -23,8 +23,8 @@ class DocumentService implements IDocumentService {
         });
     }
 
-    createEbsDocument(payload: DocEbsInput ): Promise<[DocumentEbs, boolean]> {
-        return DocumentRepository.createEbsDocument({
+    createMdharuraDocument(payload: DocumentMdharuraInput ): Promise<[DocumentMdharura, boolean]> {
+        return DocumentRepository.createMdharuraDocument({
             ...payload
         });
     }

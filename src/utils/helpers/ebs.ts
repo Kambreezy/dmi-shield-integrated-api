@@ -1,4 +1,4 @@
-import { DocEbsInput } from '../../api/models/DocumentEBS';
+import { DocumentMdharuraInput } from '../../api/models/DocumentMdharura';
 
 export type User = {
     displayName: string;
@@ -361,7 +361,7 @@ export type Task = {
     version: string;
 };
 
-export function formatTask(task: Task): DocEbsInput {
+export function formatTask(task: Task): DocumentMdharuraInput {
     return {
         _ID: task._id,
         _STATUS: task._status,

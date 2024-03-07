@@ -1,7 +1,7 @@
 import { db } from '../../database/config';
 import { DataTypes, Model, Optional } from 'sequelize';
 
-export interface DocumentEbsAttributes {
+export interface DocumentMdharuraAttributes {
     _ID: string;
     _STATUS: string;
     UNIT_ID: string;
@@ -453,11 +453,11 @@ export interface DocumentEbsAttributes {
     id: number;
 }
 
-export type DocEbsInput = Optional<DocumentEbsAttributes, 'id'>;
+export type DocumentMdharuraInput = Optional<DocumentMdharuraAttributes, 'id'>;
 
-class DocumentEbs
-    extends Model<DocumentEbsAttributes>
-    implements DocumentEbsAttributes
+class DocumentMdharura
+    extends Model<DocumentMdharuraAttributes>
+    implements DocumentMdharuraAttributes
 {
     
 
@@ -890,7 +890,7 @@ class DocumentEbs
     public id: number;
 }
 
-DocumentEbs.init(
+DocumentMdharura.init(
     {
         _ID: {
             type: DataTypes.STRING,
@@ -2593,4 +2593,4 @@ DocumentEbs.init(
     }
 );
 
-export default DocumentEbs;
+export default DocumentMdharura;

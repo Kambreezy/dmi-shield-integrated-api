@@ -4,7 +4,7 @@ import { TaskPage, formatTask } from '../../utils/helpers/ebs';
 import DocumentService from '../services/DocumentService';
 
 class EbsController {
-    async getEbsData(
+    async getMdharuraData(
         req: Request,
         res: Response,
         next: NextFunction
@@ -35,7 +35,7 @@ class EbsController {
                     const ebsDoc = formatTask(doc);
 
                     try {
-                        await DocumentService.createEbsDocument(ebsDoc);
+                        await DocumentService.createMdharuraDocument(ebsDoc);
                         successCount += 1;
                     } catch (error) {
                         errorCount += 1;
