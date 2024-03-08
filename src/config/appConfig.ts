@@ -16,9 +16,10 @@ const AppConfig = {
         password: process.env.DB_PASSWORD,
         port: parseInt(<string>process.env.DB_PORT, 10) || 5432,
         dialect: process.env.DB_DIALECT || 'mssql',
-        timezone: process.env.DB_TIMEZONE || 'Asia/Jakarta',
+        timezone: process.env.DB_TIMEZONE || 'Africa/Nairobi',
         isLogging: process.env.DB_LOG === 'true'
-    }
+    },
+    
 };
 
 export default Object.freeze(AppConfig);

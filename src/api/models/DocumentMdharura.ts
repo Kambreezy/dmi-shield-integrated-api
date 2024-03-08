@@ -1,3 +1,4 @@
+import { MDHARURA_RAW_LINELIST_TABLE } from 'config/ebs';
 import { db } from '../../database/config';
 import { DataTypes, Model, Optional } from 'sequelize';
 
@@ -2579,7 +2580,7 @@ DocumentMdharura.init(
         }
     },
     {
-        tableName: 'central-raw-ebs-linelist',
+        tableName: MDHARURA_RAW_LINELIST_TABLE,
         freezeTableName: true,
         timestamps: true,
         paranoid: true,
